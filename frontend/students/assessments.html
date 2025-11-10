@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Learning Materials &amp; Assessments - NDEMLP</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style type="text/tailwindcss">
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                        "success": "#2E7D32",
+                        "warning": "#FFAB00",
+                        "error": "#C62828",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display">
+    <div class="flex h-screen w-full">
+        <!-- SideNavBar -->
+        <aside
+            class="flex w-64 flex-col border-r border-slate-200 bg-white p-4 dark:border-slate-700 dark:bg-background-dark">
+            <div class="flex flex-col gap-4">
+                <div class="flex items-center gap-3">
+                    <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+                        data-alt="Student profile picture"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDf5bOXKalZOflvLzC-jFQPd5Kzsp4_l5wxh411Wq-L1CkpL_1n9v2nETLTaHwXqYsS4Gu6gESWkc3vtFwuFWjbkvBwp67j_x5i86MjOrr_h-mHASxfgyOR2YxFVUXXoy46_wPCbhTqdWHgCQR9-Z38fiNRsVdc_Nx_D4fhkBCMtnzokg_FIENBYc-9g3B2OfYUYzC0RbVCuUN099DJpSWTcY5-cUorp56ICrKsmk-nYeESomhUndYjDsk5f0mssTIMwzrJPaRI2Ly0");'>
+                    </div>
+                    <div class="flex flex-col">
+                        <h1 class="text-base font-medium leading-normal text-slate-900 dark:text-slate-50">Ananya Sharma
+                        </h1>
+                        <p class="text-sm font-normal leading-normal text-slate-500 dark:text-slate-400">Class 10 -
+                            Section B</p>
+                    </div>
+                </div>
+                <nav class="mt-4 flex flex-col gap-2">
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-slate-700 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
+                        href="#">
+                        <span class="material-symbols-outlined text-xl">dashboard</span>
+                        <p class="text-sm font-medium leading-normal">Dashboard</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg bg-primary/10 px-3 py-2 text-primary dark:bg-primary/20"
+                        href="#">
+                        <span class="material-symbols-outlined text-xl"
+                            style="font-variation-settings: 'FILL' 1;">menu_book</span>
+                        <p class="text-sm font-medium leading-normal">Learning Materials</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-slate-700 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
+                        href="#">
+                        <span class="material-symbols-outlined text-xl">school</span>
+                        <p class="text-sm font-medium leading-normal">Grades</p>
+                    </a>
+                </nav>
+            </div>
+            <div class="mt-auto flex flex-col gap-4">
+                <button
+                    class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90">
+                    <span class="truncate">View Profile</span>
+                </button>
+                <div class="flex flex-col gap-1">
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-slate-700 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
+                        href="#">
+                        <span class="material-symbols-outlined text-xl">settings</span>
+                        <p class="text-sm font-medium leading-normal">Settings</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-slate-700 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
+                        href="#">
+                        <span class="material-symbols-outlined text-xl">logout</span>
+                        <p class="text-sm font-medium leading-normal">Logout</p>
+                    </a>
+                </div>
+            </div>
+        </aside>
+        <!-- Main Content -->
+        <main class="flex-1 overflow-y-auto p-8">
+            <div class="mx-auto max-w-7xl">
+                <!-- Page Header -->
+                <div class="flex flex-wrap items-center justify-between gap-4">
+                    <div class="flex flex-col gap-2">
+                        <p class="text-3xl font-black leading-tight tracking-tight text-slate-900 dark:text-slate-50">
+                            Learning Materials &amp; Assessments</p>
+                        <div class="flex flex-wrap items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
+                            <a class="hover:underline" href="#">Home</a>
+                            <span>/</span>
+                            <a class="hover:underline" href="#">Learning Materials</a>
+                            <span>/</span>
+                            <span class="font-medium text-slate-700 dark:text-slate-300">Virtual Exams</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Search and Filter Bar -->
+                <div class="mt-6 flex flex-wrap items-center gap-4">
+                    <div class="flex-grow">
+                        <label class="flex flex-col h-12 w-full">
+                            <div class="flex w-full flex-1 items-stretch rounded-lg">
+                                <div
+                                    class="flex items-center justify-center rounded-l-lg border border-r-0 border-slate-300 bg-slate-100 px-4 text-slate-500 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-400">
+                                    <span class="material-symbols-outlined text-xl">search</span>
+                                </div>
+                                <input
+                                    class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-lg border border-slate-300 bg-white text-base font-normal leading-normal text-slate-900 placeholder:text-slate-400 focus:border-primary focus:outline-0 focus:ring-0 focus:ring-primary/20 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-50 dark:placeholder:text-slate-500 dark:focus:border-primary"
+                                    placeholder="Search for materials, exams, or quizzes..." value="" />
+                            </div>
+                        </label>
+                    </div>
+                    <div class="flex gap-4">
+                        <select
+                            class="form-select h-12 rounded-lg border-slate-300 bg-white text-slate-700 focus:border-primary focus:ring-primary/20 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-300">
+                            <option>All Subjects</option>
+                            <option>Mathematics</option>
+                            <option>Physics</option>
+                            <option>Chemistry</option>
+                        </select>
+                        <select
+                            class="form-select h-12 rounded-lg border-slate-300 bg-white text-slate-700 focus:border-primary focus:ring-primary/20 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-300">
+                            <option>Sort by Deadline</option>
+                            <option>Sort by Date</option>
+                            <option>Sort by Status</option>
+                        </select>
+                    </div>
+                </div>
+                <!-- Proctoring Notice -->
+                <div class="mt-6">
+                    <div
+                        class="flex flex-1 flex-col items-start justify-between gap-4 rounded-xl border border-warning/50 bg-warning/10 p-5 @[480px]:flex-row @[480px]:items-center dark:bg-warning/20">
+                        <div class="flex items-start gap-4">
+                            <span class="material-symbols-outlined mt-1 text-2xl text-warning">shield</span>
+                            <div class="flex flex-col gap-1">
+                                <p class="text-base font-bold leading-tight text-slate-900 dark:text-slate-50">Academic
+                                    Integrity Notice</p>
+                                <p class="text-sm font-normal leading-normal text-slate-700 dark:text-slate-300">
+                                    All virtual exams and quizzes are proctored using your device's camera to ensure a
+                                    fair assessment environment.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tabs and Content -->
+                <div class="mt-6">
+                    <!-- Tab Navigation -->
+                    <div class="border-b border-slate-200 dark:border-slate-700">
+                        <nav aria-label="Tabs" class="-mb-px flex space-x-6">
+                            <a class="whitespace-nowrap border-b-2 border-transparent px-1 py-4 text-sm font-medium text-slate-500 hover:border-slate-300 hover:text-slate-700 dark:text-slate-400 dark:hover:border-slate-500 dark:hover:text-slate-300"
+                                href="#">Study Notes</a>
+                            <a aria-current="page"
+                                class="whitespace-nowrap border-b-2 border-primary px-1 py-4 text-sm font-medium text-primary"
+                                href="#">Virtual Exams</a>
+                            <a class="whitespace-nowrap border-b-2 border-transparent px-1 py-4 text-sm font-medium text-slate-500 hover:border-slate-300 hover:text-slate-700 dark:text-slate-400 dark:hover:border-slate-500 dark:hover:text-slate-300"
+                                href="#">Quizzes</a>
+                        </nav>
+                    </div>
+                    <!-- Tab Content: Virtual Exams -->
+                    <div class="py-6">
+                        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                            <!-- Exam Card: In Progress -->
+                            <div
+                                class="flex flex-col justify-between rounded-xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-700 dark:bg-slate-800">
+                                <div class="flex flex-col gap-3">
+                                    <h3 class="text-lg font-bold text-slate-900 dark:text-slate-50">Physics Mid-Term
+                                        Exam</h3>
+                                    <div class="flex flex-col gap-1 text-sm text-slate-500 dark:text-slate-400">
+                                        <p><strong>Subject:</strong> Physics</p>
+                                        <p class="text-error"><strong>Deadline:</strong> 25 Oct 2023, 11:59 PM</p>
+                                    </div>
+                                </div>
+                                <div class="mt-6 flex items-center justify-between">
+                                    <span
+                                        class="rounded-full bg-warning/20 px-3 py-1 text-xs font-medium text-warning">In
+                                        Progress</span>
+                                    <button
+                                        class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-9 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90">Continue</button>
+                                </div>
+                            </div>
+                            <!-- Exam Card: Not Started -->
+                            <div
+                                class="flex flex-col justify-between rounded-xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-700 dark:bg-slate-800">
+                                <div class="flex flex-col gap-3">
+                                    <h3 class="text-lg font-bold text-slate-900 dark:text-slate-50">Mathematics Final
+                                        Exam</h3>
+                                    <div class="flex flex-col gap-1 text-sm text-slate-500 dark:text-slate-400">
+                                        <p><strong>Subject:</strong> Mathematics</p>
+                                        <p><strong>Deadline:</strong> 30 Oct 2023, 5:00 PM</p>
+                                    </div>
+                                </div>
+                                <div class="mt-6 flex items-center justify-between">
+                                    <span
+                                        class="rounded-full bg-slate-200 px-3 py-1 text-xs font-medium text-slate-600 dark:bg-slate-700 dark:text-slate-300">Not
+                                        Started</span>
+                                    <button
+                                        class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-9 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90">Start
+                                        Exam</button>
+                                </div>
+                            </div>
+                            <!-- Exam Card: Completed -->
+                            <div
+                                class="flex flex-col justify-between rounded-xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-700 dark:bg-slate-800">
+                                <div class="flex flex-col gap-3">
+                                    <h3 class="text-lg font-bold text-slate-900 dark:text-slate-50">Chemistry Unit Test
+                                    </h3>
+                                    <div class="flex flex-col gap-1 text-sm text-slate-500 dark:text-slate-400">
+                                        <p><strong>Subject:</strong> Chemistry</p>
+                                        <p><strong>Completed On:</strong> 15 Oct 2023</p>
+                                    </div>
+                                </div>
+                                <div class="mt-6 flex items-center justify-between">
+                                    <span
+                                        class="rounded-full bg-success/20 px-3 py-1 text-xs font-medium text-success">Completed</span>
+                                    <button
+                                        class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-9 px-4 border border-slate-300 bg-white text-slate-800 text-sm font-bold leading-normal tracking-[0.015em] hover:bg-slate-50 dark:border-slate-600 dark:bg-slate-700 dark:text-slate-200 dark:hover:bg-slate-600">View
+                                        Results</button>
+                                </div>
+                            </div>
+                            <!-- Empty State Card -->
+                            <div
+                                class="col-span-1 flex flex-col items-center justify-center rounded-xl border-2 border-dashed border-slate-300 bg-slate-50 py-12 text-center dark:border-slate-700 dark:bg-slate-800/50 sm:col-span-2 lg:col-span-3">
+                                <div
+                                    class="flex h-16 w-16 items-center justify-center rounded-full bg-slate-200 dark:bg-slate-700">
+                                    <span
+                                        class="material-symbols-outlined text-4xl text-slate-500 dark:text-slate-400">school</span>
+                                </div>
+                                <h3 class="mt-4 text-lg font-medium text-slate-900 dark:text-slate-50">No More Exams
+                                </h3>
+                                <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">No other virtual exams have
+                                    been assigned to you yet. Check back later!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

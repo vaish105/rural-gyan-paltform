@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>NDEMLP Virtual Editor</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;700&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .code-editor {
+            counter-reset: line;
+        }
+
+        .code-line {
+            counter-increment: line;
+        }
+
+        .code-line::before {
+            content: counter(line);
+            display: inline-block;
+            width: 2.5em;
+            text-align: right;
+            margin-right: 1.5em;
+            color: #4a6381;
+            font-size: 0.875rem;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
+    <div class="flex flex-col h-screen w-full">
+        <header
+            class="flex items-center justify-between whitespace-nowrap border-b border-gray-200 dark:border-gray-700/50 px-6 py-3 shrink-0 bg-white dark:bg-[#15212d]">
+            <div class="flex items-center gap-4">
+                <div class="w-6 h-6 text-primary">
+                    <svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M24 45.8096C19.6865 45.8096 15.4698 44.5305 11.8832 42.134C8.29667 39.7376 5.50128 36.3314 3.85056 32.3462C2.19985 28.361 1.76794 23.9758 2.60947 19.7452C3.451 15.5145 5.52816 11.6284 8.57829 8.5783C11.6284 5.52817 15.5145 3.45101 19.7452 2.60948C23.9758 1.76795 28.361 2.19986 32.3462 3.85057C36.3314 5.50129 39.7376 8.29668 42.134 11.8833C44.5305 15.4698 45.8096 19.6865 45.8096 24L24 24L24 45.8096Z">
+                        </path>
+                    </svg>
+                </div>
+                <h2 class="text-gray-900 dark:text-white text-lg font-bold">NDEMLP Virtual Editor</h2>
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="w-48">
+                    <select
+                        class="form-select flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-gray-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-gray-300 dark:border-[#324d67] bg-white dark:bg-[#192633] focus:border-primary dark:focus:border-primary h-10 placeholder:text-gray-400 dark:placeholder:text-[#92adc9] px-3 text-sm font-medium">
+                        <option value="python">Python</option>
+                        <option value="cpp">C++</option>
+                        <option value="java">Java</option>
+                        <option value="javascript">JavaScript</option>
+                    </select>
+                </div>
+                <button
+                    class="flex min-w-[84px] items-center justify-center gap-2 overflow-hidden rounded-lg h-10 px-4 bg-gray-200 dark:bg-[#233648] text-gray-700 dark:text-white text-sm font-bold hover:bg-gray-300 dark:hover:bg-gray-700/50 transition-colors">
+                    <span class="material-symbols-outlined text-base">refresh</span>
+                    <span class="truncate">Reset</span>
+                </button>
+                <button
+                    class="flex min-w-[84px] items-center justify-center gap-2 overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold hover:bg-primary/90 transition-colors">
+                    <span class="material-symbols-outlined text-base">play_arrow</span>
+                    <span class="truncate">Run</span>
+                </button>
+            </div>
+        </header>
+        <main class="flex flex-1 overflow-hidden">
+            <div class="flex-1 flex flex-col min-w-0">
+                <div class="bg-white dark:bg-[#15212d] border-b border-gray-200 dark:border-gray-700/50 px-6 py-2">
+                    <h3 class="text-sm font-medium text-gray-600 dark:text-gray-400">Code Editor</h3>
+                </div>
+                <div class="flex-1 overflow-auto bg-[#f9fafb] dark:bg-[#0c131a] p-4">
+                    <div class="code-editor font-mono text-sm leading-6 text-gray-900 dark:text-gray-300">
+                        <div class="code-line"><span class="text-pink-500 dark:text-pink-400">def</span> <span
+                                class="text-blue-600 dark:text-blue-400">hello_world</span>():</div>
+                        <div class="code-line">    <span class="text-purple-500 dark:text-purple-400">print</span>(<span
+                                class="text-green-600 dark:text-green-400">"Hello, NDEMLP!"</span>)</div>
+                        <div class="code-line"></div>
+                        <div class="code-line"><span class="text-blue-600 dark:text-blue-400">hello_world</span>()</div>
+                        <div class="code-line text-gray-400 dark:text-gray-600">// Start writing your code here...</div>
+                        <div class="code-line"></div>
+                        <div class="code-line"></div>
+                        <div class="code-line"></div>
+                        <div class="code-line"></div>
+                        <div class="code-line"></div>
+                        <div class="code-line"></div>
+                        <div class="code-line"></div>
+                        <div class="code-line"></div>
+                        <div class="code-line"></div>
+                        <div class="code-line"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-1.5 bg-gray-200 dark:bg-black/20 cursor-col-resize hover:bg-primary/50 transition-colors">
+            </div>
+            <div class="flex-1 flex flex-col min-w-0">
+                <div
+                    class="bg-white dark:bg-[#15212d] border-b border-gray-200 dark:border-gray-700/50 px-6 py-2 flex justify-between items-center">
+                    <h3 class="text-sm font-medium text-gray-600 dark:text-gray-400">Output</h3>
+                    <button
+                        class="flex items-center gap-1 text-xs text-gray-500 hover:text-primary dark:text-gray-400 dark:hover:text-primary/90 transition-colors">
+                        <span class="material-symbols-outlined text-sm">delete</span>
+                        Clear Console
+                    </button>
+                </div>
+                <div class="flex-1 overflow-auto bg-[#f9fafb] dark:bg-[#0c131a] p-6 font-mono text-sm">
+                    <p class="text-gray-500 dark:text-gray-400">Your program's output will be displayed here.</p>
+                    <!-- Example of a "running" state -->
+                    <!-- 
+                    <div class="flex items-center gap-2 text-yellow-600 dark:text-yellow-400">
+                         <svg class="animate-spin h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        <span>Running code...</span>
+                    </div>
+                    -->
+                    <!-- Example of a successful output -->
+                    <!-- 
+                    <p class="whitespace-pre-wrap text-gray-800 dark:text-gray-200">Hello, NDEMLP!</p>
+                    <p class="mt-4 text-green-600 dark:text-green-400">Execution complete.</p>
+                    -->
+                    <!-- Example of an error output -->
+                    <!--
+                    <p class="whitespace-pre-wrap text-red-600 dark:text-red-400">Traceback (most recent call last):
+  File "main.py", line 4, in <module>
+    hello_world()
+NameError: name 'hello_world' is not defined</p>
+                    <p class="mt-4 text-red-600 dark:text-red-400">Error found.</p>
+                    -->
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

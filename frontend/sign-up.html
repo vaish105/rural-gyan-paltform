@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>NDEMLP - Create Account</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700;900&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+    </style>
+</head>
+
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-200">
+    <div class="relative flex min-h-screen w-full flex-col items-center group/design-root overflow-x-hidden">
+        <div class="w-full max-w-4xl px-4 md:px-0">
+            <!-- Header -->
+            <header
+                class="flex items-center justify-between whitespace-nowrap border-b border-slate-200 dark:border-slate-700 py-4 font-display">
+                <div class="flex items-center gap-4">
+                    <img class="h-10 w-auto" data-alt="Emblem of India"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuClKYVkL99PPgtNPy4yjYFXUHFURDFe4yDSeDNrPlyhU97rG3iwNbzQOAeqbsWw-zyDdByjP-cEmLUrhSjCRPFM4d3ASQ8dPDKY0E64mq-AbrQoNk6dAkUSqiplmbAB8DP055HuNRb8EDKyCcnZhLdC3wxniwF3osaOFnJqd54B4Vqa2YhL0HBLMX-Uvpwtybl81LiUeTjjzstEg01O3shT1CRnwatS6xaZBxAHbKCsiL3IFbz9GHOaJfHo9WWvsNokFtkPYsogLScM" />
+                    <div class="flex items-center gap-2">
+                        <div class="size-5 text-primary">
+                            <svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                                <path clip-rule="evenodd" d="M24 4H42V17.3333V30.6667H24V44H6V30.6667V17.3333H24V4Z"
+                                    fill="currentColor" fill-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <h2 class="text-slate-900 dark:text-white text-lg font-bold tracking-tight">NDEMLP</h2>
+                    </div>
+                </div>
+                <button
+                    class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary/10 dark:bg-primary/20 text-primary dark:text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors">
+                    <span class="truncate">EN / HI</span>
+                </button>
+            </header>
+            <main class="py-12 md:py-16">
+                <div class="mx-auto max-w-lg">
+                    <!-- Page Heading -->
+                    <div class="text-center mb-8">
+                        <h1
+                            class="text-slate-900 dark:text-white text-4xl font-black leading-tight tracking-[-0.033em]">
+                            Create Your Account</h1>
+                        <p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal mt-2">Already
+                            have an account? <a class="font-medium text-primary hover:underline" href="#">Log In</a></p>
+                    </div>
+                    <!-- Form -->
+                    <div class="space-y-6">
+                        <!-- Full Name -->
+                        <div class="flex flex-col">
+                            <label class="text-slate-800 dark:text-slate-200 text-base font-medium leading-normal pb-2"
+                                for="full-name">Full Name</label>
+                            <input
+                                class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-slate-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-slate-300 dark:border-slate-600 bg-background-light dark:bg-background-dark focus:border-primary dark:focus:border-primary h-14 placeholder:text-slate-400 dark:placeholder:text-slate-500 p-[15px] text-base font-normal leading-normal transition-shadow"
+                                id="full-name" placeholder="Enter your full name" type="text" />
+                        </div>
+                        <!-- Username or Email -->
+                        <div class="flex flex-col">
+                            <label class="text-slate-800 dark:text-slate-200 text-base font-medium leading-normal pb-2"
+                                for="email">Username or Email Address</label>
+                            <input
+                                class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-slate-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-slate-300 dark:border-slate-600 bg-background-light dark:bg-background-dark focus:border-primary dark:focus:border-primary h-14 placeholder:text-slate-400 dark:placeholder:text-slate-500 p-[15px] text-base font-normal leading-normal transition-shadow"
+                                id="email" placeholder="Enter your username or email" type="email" />
+                        </div>
+                        <!-- Role Selector -->
+                        <div class="flex flex-col">
+                            <label class="text-slate-800 dark:text-slate-200 text-base font-medium leading-normal pb-2"
+                                for="role">Your Role</label>
+                            <div class="relative">
+                                <select
+                                    class="form-select appearance-none w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-slate-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-slate-300 dark:border-slate-600 bg-background-light dark:bg-background-dark focus:border-primary dark:focus:border-primary h-14 placeholder:text-slate-400 dark:placeholder:text-slate-500 px-[15px] text-base font-normal leading-normal transition-shadow"
+                                    id="role">
+                                    <option>Select your role</option>
+                                    <option>Student</option>
+                                    <option>Teacher</option>
+                                    <option>Administrator</option>
+                                </select>
+                                <div
+                                    class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-500 dark:text-slate-400">
+                                    <span class="material-symbols-outlined text-xl"
+                                        data-icon="expand_more">expand_more</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Password -->
+                        <div class="flex flex-col">
+                            <label class="text-slate-800 dark:text-slate-200 text-base font-medium leading-normal pb-2"
+                                for="password">Password</label>
+                            <div class="relative">
+                                <input
+                                    class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-slate-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-slate-300 dark:border-slate-600 bg-background-light dark:bg-background-dark focus:border-primary dark:focus:border-primary h-14 placeholder:text-slate-400 dark:placeholder:text-slate-500 p-[15px] pr-12 text-base font-normal leading-normal transition-shadow"
+                                    id="password" placeholder="Enter your password" type="password" />
+                                <button
+                                    class="absolute inset-y-0 right-0 flex items-center px-4 text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary">
+                                    <span class="material-symbols-outlined"
+                                        data-icon="visibility_off">visibility_off</span>
+                                </button>
+                            </div>
+                            <p class="text-slate-500 dark:text-slate-400 text-xs mt-2">Must be 8+ characters, including
+                                a number and a symbol.</p>
+                        </div>
+                        <!-- Confirm Password -->
+                        <div class="flex flex-col">
+                            <label class="text-slate-800 dark:text-slate-200 text-base font-medium leading-normal pb-2"
+                                for="confirm-password">Confirm Password</label>
+                            <input
+                                class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-slate-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-slate-300 dark:border-slate-600 bg-background-light dark:bg-background-dark focus:border-primary dark:focus:border-primary h-14 placeholder:text-slate-400 dark:placeholder:text-slate-500 p-[15px] text-base font-normal leading-normal transition-shadow"
+                                id="confirm-password" placeholder="Confirm your new password" type="password" />
+                        </div>
+                        <!-- CTA Button -->
+                        <div class="pt-4">
+                            <button
+                                class="flex w-full min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-14 px-4 bg-primary text-white text-base font-bold leading-normal tracking-wide hover:bg-primary/90 focus:outline-none focus:ring-4 focus:ring-primary/30 transition-all">
+                                <span class="truncate">Create Account</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <!-- Footer -->
+            <footer class="text-center py-8 mt-12 border-t border-slate-200 dark:border-slate-700">
+                <div class="flex justify-center items-center gap-6 text-sm">
+                    <a class="text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary hover:underline"
+                        href="#">Terms of Service</a>
+                    <a class="text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary hover:underline"
+                        href="#">Privacy Policy</a>
+                    <a class="text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary hover:underline"
+                        href="#">Accessibility</a>
+                </div>
+                <p class="text-xs text-slate-400 dark:text-slate-500 mt-4">© 2024 National Digital Education &amp;
+                    Management Learning Platform. All Rights Reserved.</p>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>

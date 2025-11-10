@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>NDEMLP AI Tutor</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;700&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0D47A1",
+                        "secondary": "#F5F5F5",
+                        "accent": "#FF9933",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                        "text-light": "#101922",
+                        "text-dark": "#f6f7f8",
+                        "text-muted-light": "#4c739a",
+                        "text-muted-dark": "#94a3b8",
+                        "bubble-ai-light": "#FFFFFF",
+                        "bubble-ai-dark": "#1e293b",
+                        "bubble-user-light": "#0D47A1",
+                        "bubble-user-dark": "#1e40af",
+                        "border-light": "#e2e8f0",
+                        "border-dark": "#334155"
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.75rem",
+                        "xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+    </style>
+</head>
+
+<body class="font-display bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark">
+    <div class="flex h-screen w-full flex-col">
+        <header
+            class="flex items-center justify-between whitespace-nowrap border-b border-solid border-border-light dark:border-border-dark px-6 py-3 shrink-0">
+            <div class="flex items-center gap-4">
+                <div class="size-6 text-primary">
+                    <svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                        <path clip-rule="evenodd" d="M24 4H42V17.3333V30.6667H24V44H6V30.6667V17.3333H24V4Z"
+                            fill="currentColor" fill-rule="evenodd"></path>
+                    </svg>
+                </div>
+                <h1 class="text-lg font-bold tracking-tight">NDEMLP AI Tutor</h1>
+            </div>
+            <div class="flex items-center gap-4">
+                <button
+                    class="flex items-center justify-center rounded-full h-10 w-10 bg-secondary dark:bg-bubble-ai-dark text-text-light dark:text-text-dark">
+                    <span class="material-symbols-outlined text-xl">notifications</span>
+                </button>
+                <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+                    data-alt="User profile picture"
+                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAIYPl6KHZwgPyi5o2j5jbhmYofNj5BPnVdQ2WBkSULeTL39T-q5P47owqlyXWLLcOk5S7Y0fEI3buLHJJP8s6nj1YsU72mutzC0vAjXgHVWYimttIkHQnbmSvNSMR4cXMG9iMkIFTucdQmsp9P6kJ6JSM0imBBPS32VCLZrydLU29cRVA4y4SXNUKJzXDyFyrFkAshbJERpRG2LyGVzDMnt0wOm7Mm-uftxiOlg3K94N724UvUokh7MRIdecTIQ6uJXd7wds3Y4ee0");'>
+                </div>
+            </div>
+        </header>
+        <div class="flex flex-1 overflow-hidden">
+            <!-- Collapsible Sidebar -->
+            <aside
+                class="flex h-full w-72 flex-col justify-between bg-white dark:bg-background-dark p-4 border-r border-border-light dark:border-border-dark">
+                <div class="flex flex-col gap-4">
+                    <button
+                        class="flex min-w-[84px] cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold tracking-wide">
+                        <span class="material-symbols-outlined text-lg">add_circle</span>
+                        <span class="truncate">New Chat</span>
+                    </button>
+                    <div class="flex flex-col gap-1">
+                        <div class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-secondary dark:bg-bubble-ai-dark">
+                            <span
+                                class="material-symbols-outlined text-lg text-text-light dark:text-text-dark">chat_bubble</span>
+                            <p class="text-sm font-medium">Photosynthesis Process</p>
+                        </div>
+                        <div
+                            class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-secondary dark:hover:bg-bubble-ai-dark cursor-pointer">
+                            <span class="material-symbols-outlined text-lg">chat_bubble</span>
+                            <p class="text-sm font-medium">Newton's Laws</p>
+                        </div>
+                        <div
+                            class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-secondary dark:hover:bg-bubble-ai-dark cursor-pointer">
+                            <span class="material-symbols-outlined text-lg">chat_bubble</span>
+                            <p class="text-sm font-medium">Solving quadratic...</p>
+                        </div>
+                        <div
+                            class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-secondary dark:hover:bg-bubble-ai-dark cursor-pointer">
+                            <span class="material-symbols-outlined text-lg">chat_bubble</span>
+                            <p class="text-sm font-medium">Indian History: 1857</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-t border-border-light dark:border-border-dark pt-4">
+                    <div
+                        class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-secondary dark:hover:bg-bubble-ai-dark cursor-pointer">
+                        <span class="material-symbols-outlined text-lg">settings</span>
+                        <p class="text-sm font-medium">Settings</p>
+                    </div>
+                </div>
+            </aside>
+            <!-- Main Chat Window -->
+            <main class="flex flex-1 flex-col">
+                <div class="flex-1 overflow-y-auto p-6">
+                    <div class="mx-auto max-w-4xl space-y-8">
+                        <!-- AI Welcome Message -->
+                        <div class="flex items-start gap-4">
+                            <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-10 h-10 shrink-0"
+                                data-alt="AI Tutor avatar"
+                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBiPDFoLS46n6bFZJXqIVeVi9sCNTLpxp-L62fbupOaDk0D3-hcsdSCdDWUu5d8wPa1OgLTN-OelZevKNKJMs2zTOWsGnDjTGRR2NWOuWHk4sr_A0NXbk5RnUkIWkJkkaRqEg5WgOMzED0dGYlkG9hGTv5bj2cw8ocRGZcvUaE_bqS1fMgXkaY_UVfzhq9HvJcVGRp9z-3tni-mJzhq-fn7Oh4mm9VR099FZhjStWdK7ZbyUsClX8lIsJh0IRrVErIYB4M3rw4FdKna");'>
+                            </div>
+                            <div class="flex flex-col gap-1.5 items-start">
+                                <p class="text-sm font-bold text-text-light dark:text-text-dark">AI Tutor</p>
+                                <div
+                                    class="text-base font-normal leading-relaxed flex max-w-2xl rounded-lg rounded-tl-none px-4 py-3 bg-bubble-ai-light dark:bg-bubble-ai-dark shadow-sm">
+                                    Hello! I am your AI study assistant. Ask me to explain a concept from physics, solve
+                                    a math problem, or help you with your homework.
+                                </div>
+                            </div>
+                        </div>
+                        <!-- User Message -->
+                        <div class="flex items-start gap-4 justify-end">
+                            <div class="flex flex-col gap-1.5 items-end">
+                                <p class="text-sm font-bold text-text-light dark:text-text-dark">Student</p>
+                                <div
+                                    class="text-base font-normal leading-relaxed flex max-w-2xl rounded-lg rounded-tr-none px-4 py-3 bg-bubble-user-light text-white shadow-sm">
+                                    Explain the process of photosynthesis.
+                                </div>
+                            </div>
+                            <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-10 h-10 shrink-0"
+                                data-alt="Student avatar"
+                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBeACQtGTUwx2i6yYnVijGpAQg4GnSNzIyxVxCo_ppgIwq5oWfRd8BwdXFX7_rFuKRped9io0e2myCSmO6WhVtAq3oM__MY8pbiUMIRupxT5LtLV2T_73TgM0L5Y9lEVtRwIrWfV1zdzdAS1UQAK6ijMV6wyoeqjq19WDoBvrAsoAL38MDKbHMReeM8cKDXhLiufIksePf3T9y8Yx3iQJTL7po5XM9Sbn0IrTRWvb-9cVABzpR5J17M2FpK0yRTp22DySSKOF8UcTuy");'>
+                            </div>
+                        </div>
+                        <!-- AI Response -->
+                        <div class="flex items-start gap-4">
+                            <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-10 h-10 shrink-0"
+                                data-alt="AI Tutor avatar"
+                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCvNCc96st5qk2URrZsgLw50iRvQPNMBOpIIxf8ESDnSU_rq5AISqvgMsZN_nGls4aiKbhzvpqbEhXsl8Hjw-GxP8jwr8IZe4vZ2wGMZldix8jTkoEBmti1hZQO9F2Wv2dhdifHGJ0a_Lk7Syz_YuiOhpJ70vs5m3fS7q_sNVVpdSRsYIZNJVCvMFkddwiM5AvXtbl7KQTc_F0dsYWr6kKiXZnuP5gST58RkyZO9OKNidWII0Z8suJfgFm3OFglkxNn-smfI_7CiO9k");'>
+                            </div>
+                            <div class="flex flex-col gap-1.5 items-start">
+                                <p class="text-sm font-bold text-text-light dark:text-text-dark">AI Tutor</p>
+                                <div
+                                    class="text-base font-normal leading-relaxed flex max-w-2xl rounded-lg rounded-tl-none px-4 py-3 bg-bubble-ai-light dark:bg-bubble-ai-dark shadow-sm">
+                                    <div class="prose prose-sm dark:prose-invert max-w-none">
+                                        <p>Of course! Photosynthesis is the process used by plants, algae, and certain
+                                            bacteria to harness energy from sunlight and turn it into chemical energy.
+                                            Here's a simple breakdown:</p>
+                                        <p><strong>Key Ingredients:</strong></p>
+                                        <ul>
+                                            <li>Sunlight</li>
+                                            <li>Water (H₂O)</li>
+                                            <li>Carbon Dioxide (CO₂)</li>
+                                        </ul>
+                                        <p><strong>The Process:</strong></p>
+                                        <ol>
+                                            <li><strong>Light-Dependent Reactions:</strong> The plant's chlorophyll
+                                                absorbs sunlight.</li>
+                                            <li><strong>Light-Independent Reactions (Calvin Cycle):</strong> This energy
+                                                is used to convert CO₂ and water into glucose (sugar/food).</li>
+                                        </ol>
+                                        <p>Oxygen is released as a byproduct. It's essential for life on Earth!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Loading Indicator -->
+                        <div class="flex items-start gap-4">
+                            <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-10 h-10 shrink-0"
+                                data-alt="AI Tutor avatar"
+                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDgsufuk08nMZALaCxeP3Ex4RfPUEBGb2Jb3xmoRV9usYxmR28vksx1Eq1EWQhJk39c2ZeCig0pvZWQUhDZjwDVHL1DpCoPccN3POkEPuFXcqC_MvPeVNH5Mv_xv3Voo8q8zuFk5mO8kWxmTJuwycoob-1SPpVCvfznG0ATzgtTQk_JmSTPdQt4aAkM6CnJQRQyehAoNCXdQySdHFx-BXLfrDlAB0gnmtDXSPNAq6o2Es86VIYP5P8PwRbSzKgXRUthNcD0Xc_QtBgz");'>
+                            </div>
+                            <div class="flex flex-col gap-1.5 items-start">
+                                <p class="text-sm font-bold text-text-light dark:text-text-dark">AI Tutor</p>
+                                <div
+                                    class="text-base font-normal leading-relaxed flex items-center gap-2 max-w-2xl rounded-lg rounded-tl-none px-4 py-3 bg-bubble-ai-light dark:bg-bubble-ai-dark shadow-sm">
+                                    <span
+                                        class="w-2 h-2 bg-text-muted-light dark:bg-text-muted-dark rounded-full animate-pulse"
+                                        style="animation-delay: 0s;"></span>
+                                    <span
+                                        class="w-2 h-2 bg-text-muted-light dark:bg-text-muted-dark rounded-full animate-pulse"
+                                        style="animation-delay: 0.2s;"></span>
+                                    <span
+                                        class="w-2 h-2 bg-text-muted-light dark:bg-text-muted-dark rounded-full animate-pulse"
+                                        style="animation-delay: 0.4s;"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Text Input Bar -->
+                <div class="p-6 pt-4 bg-background-light dark:bg-background-dark">
+                    <div class="mx-auto max-w-4xl">
+                        <div
+                            class="relative flex items-center rounded-xl border border-border-light dark:border-border-dark bg-white dark:bg-bubble-ai-dark focus-within:ring-2 focus-within:ring-primary">
+                            <textarea
+                                class="w-full resize-none border-0 bg-transparent py-3 pl-4 pr-32 text-base text-text-light dark:text-text-dark focus:ring-0"
+                                placeholder="Ask me anything..."></textarea>
+                            <div class="absolute right-2 top-1/2 -translate-y-1/2 flex items-center gap-1">
+                                <button
+                                    class="flex items-center justify-center size-8 rounded-lg text-text-muted-light dark:text-text-muted-dark hover:bg-secondary dark:hover:bg-background-dark"
+                                    title="Upload Image">
+                                    <span class="material-symbols-outlined text-xl">image</span>
+                                </button>
+                                <button
+                                    class="flex items-center justify-center size-8 rounded-lg text-text-muted-light dark:text-text-muted-dark hover:bg-secondary dark:hover:bg-background-dark"
+                                    title="Attach Document">
+                                    <span class="material-symbols-outlined text-xl">attach_file</span>
+                                </button>
+                                <button
+                                    class="flex items-center justify-center size-8 rounded-lg text-text-muted-light dark:text-text-muted-dark hover:bg-secondary dark:hover:bg-background-dark"
+                                    title="Record Audio">
+                                    <span class="material-symbols-outlined text-xl">mic</span>
+                                </button>
+                                <button
+                                    class="flex items-center justify-center size-9 rounded-lg bg-primary text-white ml-1 hover:bg-primary/90">
+                                    <span class="material-symbols-outlined text-xl">send</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+
+</html>

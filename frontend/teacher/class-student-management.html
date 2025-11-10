@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Class &amp; Student Management - NDEMLP</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#265073",
+                        "secondary": "#2D9596",
+                        "accent": "#F2613F",
+                        "background-light": "#F5F5F5",
+                        "background-dark": "#101922",
+                        "neutral-border": "#E0E0E0",
+                        "neutral-text": "#333333",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body class="font-display bg-background-light dark:bg-background-dark">
+    <div class="relative flex min-h-screen w-full">
+        <!-- Side Navigation Bar -->
+        <aside
+            class="flex h-screen w-64 flex-col justify-between border-r border-neutral-border bg-white p-4 dark:border-gray-700 dark:bg-background-dark sticky top-0">
+            <div class="flex flex-col gap-8">
+                <div class="flex items-center gap-3 px-2">
+                    <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+                        data-alt="Anjali Sharma's profile picture"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAsBJqwUvoHmAjq-ZTaFHCg6T9buVnWidLjyuBZVop6SBm3oMJEI0ABZNmrxi0RrgIK8hroWkuAjQIveIgS03Oku6Iu97sQxlG3ZmasBQ84RpMTUsVZWPD96rfwStT-NEwOV5xfKI2hH0VNnMtPV5FLtEmGlFaBB47Z37BN-1MAjPz0RtOdkjwRveXyQXVW1pLP8BHsZhV8EU-mYKSvkuD6isGgGPeBIMzFX7DbdOsCWsp6mhd0_IcyWoDUm3lzYXDrHzR1RLbM5bbJ");'>
+                    </div>
+                    <div class="flex flex-col">
+                        <h1 class="text-neutral-text dark:text-gray-200 text-base font-medium leading-normal">Anjali
+                            Sharma</h1>
+                        <p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">Teacher</p>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <p class="px-3 text-xs font-semibold uppercase text-gray-500 dark:text-gray-400">Classes</p>
+                    <a class="flex items-center justify-between gap-3 px-3 py-2 rounded-lg bg-primary/10 text-primary"
+                        href="#">
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-lg">school</span>
+                            <p class="text-sm font-medium leading-normal">Class 8A - Science</p>
+                        </div>
+                        <span class="text-xs font-semibold bg-primary/20 text-primary rounded-full px-2 py-0.5">Class
+                            Teacher</span>
+                    </a>
+                    <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-neutral-text hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800"
+                        href="#">
+                        <span class="material-symbols-outlined text-lg">science</span>
+                        <p class="text-sm font-medium leading-normal">Class 8B - Science</p>
+                    </a>
+                    <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-neutral-text hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800"
+                        href="#">
+                        <span class="material-symbols-outlined text-lg">calculate</span>
+                        <p class="text-sm font-medium leading-normal">Class 9A - Mathematics</p>
+                    </a>
+                </div>
+            </div>
+            <div class="flex flex-col gap-1 border-t border-neutral-border pt-4 dark:border-gray-700">
+                <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-neutral-text hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800"
+                    href="#">
+                    <span class="material-symbols-outlined text-lg">settings</span>
+                    <p class="text-sm font-medium leading-normal">Settings</p>
+                </a>
+                <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-neutral-text hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800"
+                    href="#">
+                    <span class="material-symbols-outlined text-lg">logout</span>
+                    <p class="text-sm font-medium leading-normal">Log out</p>
+                </a>
+            </div>
+        </aside>
+        <!-- Main Content Area -->
+        <main class="flex-1 p-8">
+            <div class="mx-auto flex w-full max-w-7xl flex-col gap-8">
+                <!-- Page Heading -->
+                <div class="flex flex-wrap items-start justify-between gap-4">
+                    <div class="flex min-w-72 flex-col gap-2">
+                        <p class="text-neutral-text dark:text-white text-3xl font-bold leading-tight tracking-tight">
+                            Classes &amp; Student Management</p>
+                        <p class="text-gray-500 dark:text-gray-400 text-base font-normal leading-normal">Select a class
+                            to view the student list and manage details.</p>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <button
+                            class="flex h-10 items-center justify-center gap-2 rounded-lg border border-neutral-border bg-white px-4 text-sm font-medium text-neutral-text dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300">
+                            <span class="material-symbols-outlined text-base">download</span>
+                            Export List
+                        </button>
+                        <button
+                            class="flex h-10 items-center justify-center gap-2 rounded-lg bg-primary px-4 text-sm font-medium text-white">
+                            <span class="material-symbols-outlined text-base">add</span>
+                            Add Student
+                        </button>
+                    </div>
+                </div>
+                <!-- Tabs (simplified as we use side nav, this acts as section header) -->
+                <div class="pb-3">
+                    <div class="flex border-b border-neutral-border gap-8 dark:border-gray-700">
+                        <a class="flex flex-col items-center justify-center border-b-[3px] border-b-primary pb-3 pt-1"
+                            href="#">
+                            <p class="text-primary text-sm font-bold leading-normal tracking-[0.015em]">Class 8A -
+                                Science</p>
+                        </a>
+                        <a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-gray-500 pb-3 pt-1 dark:text-gray-400"
+                            href="#">
+                            <p class="text-sm font-bold leading-normal tracking-[0.015em]">Assignments</p>
+                        </a>
+                        <a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-gray-500 pb-3 pt-1 dark:text-gray-400"
+                            href="#">
+                            <p class="text-sm font-bold leading-normal tracking-[0.015em]">Gradebook</p>
+                        </a>
+                    </div>
+                </div>
+                <!-- Stats -->
+                <div class="flex flex-wrap gap-4">
+                    <div
+                        class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl border border-neutral-border bg-white p-6 dark:bg-gray-800 dark:border-gray-700">
+                        <p class="text-neutral-text dark:text-gray-300 text-base font-medium leading-normal">Total
+                            Students</p>
+                        <p class="text-neutral-text dark:text-white tracking-light text-3xl font-bold leading-tight">42
+                        </p>
+                    </div>
+                    <div
+                        class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl border border-neutral-border bg-white p-6 dark:bg-gray-800 dark:border-gray-700">
+                        <p class="text-neutral-text dark:text-gray-300 text-base font-medium leading-normal">Average
+                            Attendance</p>
+                        <p class="text-secondary tracking-light text-3xl font-bold leading-tight">92%</p>
+                    </div>
+                    <div
+                        class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl border border-neutral-border bg-white p-6 dark:bg-gray-800 dark:border-gray-700">
+                        <p class="text-neutral-text dark:text-gray-300 text-base font-medium leading-normal">Avg. Exam
+                            Score</p>
+                        <p class="text-primary tracking-light text-3xl font-bold leading-tight">85.4</p>
+                    </div>
+                </div>
+                <!-- Student List Section -->
+                <div class="flex flex-col gap-4">
+                    <h2 class="text-neutral-text dark:text-white text-xl font-bold leading-tight tracking-tight">Class
+                        8A - Student Roster</h2>
+                    <!-- Search and Filter Bar -->
+                    <div class="flex items-center gap-4">
+                        <div class="relative flex-1">
+                            <span
+                                class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">search</span>
+                            <input
+                                class="w-full rounded-lg border-neutral-border bg-white pl-10 pr-4 py-2 text-sm focus:border-primary focus:ring-primary dark:bg-gray-800 dark:border-gray-700 dark:text-gray-300"
+                                placeholder="Search by student name..." type="text" />
+                        </div>
+                        <select
+                            class="rounded-lg border-neutral-border bg-white py-2 text-sm focus:border-primary focus:ring-primary dark:bg-gray-800 dark:border-gray-700 dark:text-gray-300">
+                            <option>Sort by Name</option>
+                            <option>Sort by Roll Number</option>
+                            <option>Sort by Attendance</option>
+                        </select>
+                    </div>
+                    <!-- Student Data Table -->
+                    <div class="overflow-hidden rounded-xl border border-neutral-border dark:border-gray-700">
+                        <table
+                            class="min-w-full divide-y divide-neutral-border bg-white dark:divide-gray-700 dark:bg-gray-800">
+                            <thead class="bg-gray-50 dark:bg-gray-900/50">
+                                <tr>
+                                    <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500 dark:text-gray-400"
+                                        scope="col">Roll No.</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500 dark:text-gray-400"
+                                        scope="col">Student Name</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500 dark:text-gray-400"
+                                        scope="col">Attendance</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500 dark:text-gray-400"
+                                        scope="col">Last Exam Score</th>
+                                    <th class="relative px-6 py-3" scope="col">
+                                        <span class="sr-only">Actions</span>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-neutral-border dark:divide-gray-700">
+                                <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/50">
+                                    <td
+                                        class="whitespace-nowrap px-6 py-4 text-sm font-medium text-neutral-text dark:text-gray-200">
+                                        01</td>
+                                    <td
+                                        class="whitespace-nowrap px-6 py-4 text-sm text-neutral-text dark:text-gray-200">
+                                        <div class="flex items-center gap-3">
+                                            <img class="h-8 w-8 rounded-full" data-alt="Aarav Singh's profile picture"
+                                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJ_W4deYTyGKIsvQgk3AqDJOCxu88Uy7sp6VQwA2kxd3u7QSxHbmXPSQrJSqcZy4-1L72kcV91Pi6y2gbV2C2FWFRl4uU_Q2QFNpJcBnn6Vhiu_Uvf4bzOcm4WlgeO7jUsDkQc46r_GEUVIqNmK98RPlX63MQbGbaeQn-AoiXkflN8NXMDSRegkukdWdj1LLKiza_w8vrkIShGEInVLCYQ4JiPXoGgYDiSZpMnTzxVJGVb_JcZ_dMt2x3ts9hhc2wEdrTA6JWskGtN" />
+                                            Aarav Singh
+                                        </div>
+                                    </td>
+                                    <td class="whitespace-nowrap px-6 py-4 text-sm text-secondary">98%</td>
+                                    <td
+                                        class="whitespace-nowrap px-6 py-4 text-sm text-neutral-text dark:text-gray-300">
+                                        92/100</td>
+                                    <td class="whitespace-nowrap px-6 py-4 text-right text-sm font-medium">
+                                        <a class="text-primary hover:underline" href="#">View Details</a>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/50">
+                                    <td
+                                        class="whitespace-nowrap px-6 py-4 text-sm font-medium text-neutral-text dark:text-gray-200">
+                                        02</td>
+                                    <td
+                                        class="whitespace-nowrap px-6 py-4 text-sm text-neutral-text dark:text-gray-200">
+                                        <div class="flex items-center gap-3">
+                                            <img class="h-8 w-8 rounded-full" data-alt="Diya Patel's profile picture"
+                                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7ON0Y2SDMcUtZSWYkbFZQ_kLBQ2Vf5lPeYp-Grm4JFdZVSgbt9pEPkwYsdiXHbYAo7LDY2_2HA0c-TKQ4tsy03brYRZ-5ACv8G9PGtYfHunmISKkrBcmhKXJId5bEbfsXHGrXosv9etO15Yqv7kAudPsZQNs91_qAsml2JqVOtvzX9j01YZjZQWusE2n6jaDdhYPVVteeKgycBFJM1Jls9X4PO6zpp6rsIoptFY1zo7YjqDzZxtTX-1WfHJlwSsrp5NHG1VMw3UdP" />
+                                            Diya Patel
+                                        </div>
+                                    </td>
+                                    <td class="whitespace-nowrap px-6 py-4 text-sm">
+                                        <div class="flex items-center gap-2">
+                                            <span class="text-accent">74%</span>
+                                            <div class="relative group">
+                                                <span
+                                                    class="material-symbols-outlined text-base text-accent cursor-pointer">error</span>
+                                                <div
+                                                    class="absolute bottom-full mb-2 hidden w-48 rounded-lg bg-gray-800 px-3 py-2 text-center text-xs text-white group-hover:block">
+                                                    Low attendance warning.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td
+                                        class="whitespace-nowrap px-6 py-4 text-sm text-neutral-text dark:text-gray-300">
+                                        78/100</td>
+                                    <td class="whitespace-nowrap px-6 py-4 text-right text-sm font-medium">
+                                        <a class="text-primary hover:underline" href="#">View Details</a>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/50">
+                                    <td
+                                        class="whitespace-nowrap px-6 py-4 text-sm font-medium text-neutral-text dark:text-gray-200">
+                                        03</td>
+                                    <td
+                                        class="whitespace-nowrap px-6 py-4 text-sm text-neutral-text dark:text-gray-200">
+                                        <div class="flex items-center gap-3">
+                                            <img class="h-8 w-8 rounded-full" data-alt="Rohan Gupta's profile picture"
+                                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPM5vc3LXdppYEBjgvcIv_SX4jWI3j2v131QgYbp8-w7gJ444HbpgNbcZMX1hfsd0jPFFWs4JuRm5-wJo4RBfWhkQsFwmN4yjaEJ9ZBdssMxj_8O2P84MHjUgtKiNlOI3OuNQom6eaZGznSZ6x5viqE8UciZE2Ck371RiT7f5efbTXydBnXZHieeC9i8ZUKEvPLGtYJrBiYPBzVnfHqCLCklTZ4HIAMsA3uXqeRMz1jO9PE9vlB9LlBGX_GUJEl2qmYPw_sSklAYaU" />
+                                            Rohan Gupta
+                                        </div>
+                                    </td>
+                                    <td class="whitespace-nowrap px-6 py-4 text-sm text-secondary">95%</td>
+                                    <td
+                                        class="whitespace-nowrap px-6 py-4 text-sm text-neutral-text dark:text-gray-300">
+                                        88/100</td>
+                                    <td class="whitespace-nowrap px-6 py-4 text-right text-sm font-medium">
+                                        <a class="text-primary hover:underline" href="#">View Details</a>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/50">
+                                    <td
+                                        class="whitespace-nowrap px-6 py-4 text-sm font-medium text-neutral-text dark:text-gray-200">
+                                        04</td>
+                                    <td
+                                        class="whitespace-nowrap px-6 py-4 text-sm text-neutral-text dark:text-gray-200">
+                                        <div class="flex items-center gap-3">
+                                            <img class="h-8 w-8 rounded-full" data-alt="Isha Sharma's profile picture"
+                                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpvrG2xCHYpQK4WNudBX05j2PSDUOS7HhjCGPlaMPXzCBzkn97DLXmgbmDhmzBUWT7FwhhjJtGu3AahmyPMQnG8-6mH7oyWeEuWC9U8m2NKydNezdqtUOfAznwP0jCRpuYWThPRQeDO4zGgCHj6aJdTyZnIcMsJJBkAsk8IFmwnWznCd6jyxqT94wXC3IGOvp67i9JksER8YbOBumhrT0sCFkl4G1e1xv2TGTK7ncfsnHhSygZKCF5LIDCx0a__iz0Kd0t_c1TWu-i" />
+                                            Isha Sharma
+                                        </div>
+                                    </td>
+                                    <td class="whitespace-nowrap px-6 py-4 text-sm text-secondary">99%</td>
+                                    <td
+                                        class="whitespace-nowrap px-6 py-4 text-sm text-neutral-text dark:text-gray-300">
+                                        95/100</td>
+                                    <td class="whitespace-nowrap px-6 py-4 text-right text-sm font-medium">
+                                        <a class="text-primary hover:underline" href="#">View Details</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>NDEMLP - Admin Profile Management</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700;900&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#005BAC",
+                        "accent": "#FF9933",
+                        "background-light": "#F1F3F6",
+                        "background-dark": "#101922",
+                        "content-light": "#FFFFFF",
+                        "content-dark": "#182431",
+                        "text-primary-light": "#0d141b",
+                        "text-primary-dark": "#f1f3f6",
+                        "text-secondary-light": "#4c739a",
+                        "text-secondary-dark": "#a0b3c6",
+                        "border-light": "#e7edf3",
+                        "border-dark": "#344557"
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.75rem",
+                        "xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+
+<body
+    class="font-display bg-background-light dark:bg-background-dark text-text-primary-light dark:text-text-primary-dark">
+    <div class="relative flex h-auto min-h-screen w-full flex-col">
+        <header
+            class="flex items-center justify-between whitespace-nowrap border-b border-solid border-border-light dark:border-border-dark bg-content-light dark:bg-content-dark px-6 md:px-10 py-3 sticky top-0 z-10">
+            <div class="flex items-center gap-4 text-text-primary-light dark:text-text-primary-dark">
+                <div class="size-6 text-primary">
+                    <svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                        <path clip-rule="evenodd" d="M24 4H42V17.3333V30.6667H24V44H6V30.6667V17.3333H24V4Z"
+                            fill="currentColor" fill-rule="evenodd"></path>
+                    </svg>
+                </div>
+                <h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">NDEMLP</h2>
+            </div>
+            <div class="flex flex-1 justify-end gap-4 md:gap-6 items-center">
+                <div class="flex gap-2">
+                    <button
+                        class="flex cursor-pointer items-center justify-center overflow-hidden rounded-full size-10 bg-background-light dark:bg-background-dark text-text-secondary-light dark:text-text-secondary-dark hover:bg-primary/10 dark:hover:bg-primary/20">
+                        <span class="material-symbols-outlined text-xl">notifications</span>
+                    </button>
+                    <button
+                        class="flex cursor-pointer items-center justify-center overflow-hidden rounded-full size-10 bg-background-light dark:bg-background-dark text-text-secondary-light dark:text-text-secondary-dark hover:bg-primary/10 dark:hover:bg-primary/20">
+                        <span class="material-symbols-outlined text-xl">settings</span>
+                    </button>
+                </div>
+                <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+                    data-alt="Administrator's avatar"
+                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDjsAnrsheVEtBtX4f6dwQlpOOVkMOpCYUbWo4PGA3QrTlmw_Xdi0domj0zsiEHaIRgVlI7cyM-yjsyvs_ozx6kyuvEhb_gNrWsBIZ-S3Yl6flmAritla5CxzajreXR3G3cZuVIQXM3K3ws_pujTxrxIyItQNcJBeJ5sFzgjd3IPX8BbM4M3vx5i5fEkUNVWaYOwNKVrMTnpDlSFBxX5X3JAtVXcHu3cRUUGNlU3fSgHqxh9RSHpyq4vOd2XMjyRiiy9z5Q5ipBK_-M");'>
+                </div>
+            </div>
+        </header>
+        <main class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="flex flex-wrap gap-2 mb-6">
+                <a class="text-text-secondary-light dark:text-text-secondary-dark hover:text-primary text-sm font-medium leading-normal"
+                    href="#">Dashboard</a>
+                <span
+                    class="text-text-secondary-light dark:text-text-secondary-dark text-sm font-medium leading-normal">/</span>
+                <span
+                    class="text-text-primary-light dark:text-text-primary-dark text-sm font-medium leading-normal">Profile
+                    Management</span>
+            </div>
+            <div class="flex flex-wrap justify-between items-center gap-4 mb-8">
+                <h1
+                    class="text-text-primary-light dark:text-text-primary-dark text-3xl md:text-4xl font-black leading-tight tracking-[-0.033em]">
+                    My Profile</h1>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Left Column: Profile Card -->
+                <aside class="lg:col-span-1 flex flex-col gap-8">
+                    <div class="bg-content-light dark:bg-content-dark p-6 rounded-lg shadow-sm">
+                        <div class="flex flex-col gap-4 items-center text-center">
+                            <div class="relative">
+                                <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full min-h-32 w-32"
+                                    data-alt="Administrator's profile picture"
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCQZFezGu4oo8mrv0aXMSGPJjUdbMxYSFLadcRwuz8j9LmC0bVQ_NELTeZEjDDBgDbuIsCYVtWN1Flnvc5ohTkqMYG9MkRCXR7WH4o_rT9wz--0uSymNTMA31vyA_Awbhud7yfJ7cGV31eg3Ocyr4HIFm6Ao98g05ezWNn5ooiUf1ZpMHpfEYyU3B0nlH3cJpiPB22eExMaF65pK9l45PMy8-O5oFye-kgiLYK8xqHdtb1LJMmdyIH8_STItsdyWMACAXyHvllMoJa7");'>
+                                </div>
+                                <button
+                                    class="absolute bottom-1 right-1 flex items-center justify-center size-8 bg-primary text-white rounded-full hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+                                    <span class="material-symbols-outlined text-base">edit</span>
+                                </button>
+                            </div>
+                            <div class="flex flex-col justify-center">
+                                <p
+                                    class="text-text-primary-light dark:text-text-primary-dark text-xl font-bold leading-tight tracking-[-0.015em]">
+                                    Administrator's Full Name</p>
+                                <p
+                                    class="text-text-secondary-light dark:text-text-secondary-dark text-base font-normal leading-normal">
+                                    Administrator</p>
+                            </div>
+                            <button
+                                class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-background-light dark:bg-background-dark text-text-primary-light dark:text-text-primary-dark text-sm font-bold leading-normal tracking-[0.015em] hover:bg-gray-200 dark:hover:bg-gray-700">
+                                <span class="truncate">Upload/Change Picture</span>
+                            </button>
+                        </div>
+                        <div class="mt-6 grid grid-cols-[auto_1fr] gap-x-4 gap-y-5 text-sm">
+                            <p class="text-text-secondary-light dark:text-text-secondary-dark font-medium">Admin ID</p>
+                            <p class="text-text-primary-light dark:text-text-primary-dark text-right">ND-Admin-001</p>
+                            <p class="text-text-secondary-light dark:text-text-secondary-dark font-medium">Department
+                            </p>
+                            <p class="text-text-primary-light dark:text-text-primary-dark text-right">IT &amp;
+                                Infrastructure</p>
+                            <p class="text-text-secondary-light dark:text-text-secondary-dark font-medium">Last Login
+                            </p>
+                            <p class="text-text-primary-light dark:text-text-primary-dark text-right">18 Oct 2023, 10:30
+                                AM</p>
+                        </div>
+                    </div>
+                </aside>
+                <!-- Right Column: Tabs and Forms -->
+                <div class="lg:col-span-2">
+                    <div class="bg-content-light dark:bg-content-dark rounded-lg shadow-sm">
+                        <!-- Tab Navigation -->
+                        <div class="border-b border-border-light dark:border-border-dark">
+                            <nav aria-label="Tabs" class="flex space-x-2 px-6">
+                                <button
+                                    class="text-primary border-b-2 border-primary px-3 py-4 text-sm font-bold">Personal
+                                    Information</button>
+                                <button
+                                    class="text-text-secondary-light dark:text-text-secondary-dark hover:text-text-primary-light dark:hover:text-text-primary-dark hover:border-b-2 hover:border-gray-300 dark:hover:border-gray-600 px-3 py-4 text-sm font-bold">Change
+                                    Password</button>
+                            </nav>
+                        </div>
+                        <!-- Personal Information Form -->
+                        <div class="p-6" id="personal-info-form">
+                            <h2 class="text-xl font-bold text-text-primary-light dark:text-text-primary-dark mb-6">Edit
+                                Your Information</h2>
+                            <form class="space-y-6">
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                    <div>
+                                        <label
+                                            class="block text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark mb-1"
+                                            for="fullName">Full Name</label>
+                                        <input
+                                            class="block w-full rounded-md border-border-light dark:border-border-dark shadow-sm bg-background-light dark:bg-background-dark focus:border-primary focus:ring-primary sm:text-sm"
+                                            id="fullName" name="fullName" type="text"
+                                            value="Administrator's Full Name" />
+                                    </div>
+                                    <div>
+                                        <label
+                                            class="block text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark mb-1"
+                                            for="email">Email Address</label>
+                                        <input
+                                            class="block w-full rounded-md border-border-light dark:border-border-dark shadow-sm bg-gray-100 dark:bg-gray-800 text-text-secondary-light dark:text-text-secondary-dark sm:text-sm cursor-not-allowed"
+                                            id="email" name="email" readonly="" type="email"
+                                            value="admin@ndemlp.gov.in" />
+                                    </div>
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark mb-1"
+                                        for="phone">Phone Number</label>
+                                    <input
+                                        class="block w-full rounded-md border-border-light dark:border-border-dark shadow-sm bg-background-light dark:bg-background-dark focus:border-primary focus:ring-primary sm:text-sm"
+                                        id="phone" name="phone" type="tel" />
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark mb-1"
+                                        for="department">Department</label>
+                                    <select
+                                        class="block w-full rounded-md border-border-light dark:border-border-dark shadow-sm bg-background-light dark:bg-background-dark focus:border-primary focus:ring-primary sm:text-sm"
+                                        id="department" name="department">
+                                        <option>Administration</option>
+                                        <option selected="">IT &amp; Infrastructure</option>
+                                        <option>Academics</option>
+                                        <option>Finance</option>
+                                    </select>
+                                </div>
+                                <div class="flex justify-end items-center gap-4 pt-4">
+                                    <button
+                                        class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-background-light dark:bg-background-dark text-text-primary-light dark:text-text-primary-dark text-sm font-bold hover:bg-gray-200 dark:hover:bg-gray-700"
+                                        type="button">Cancel</button>
+                                    <button
+                                        class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold hover:bg-blue-700 disabled:bg-primary/50 disabled:cursor-not-allowed"
+                                        disabled="" type="submit">Save Changes</button>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- Change Password Form (Initially hidden for demo) -->
+                        <div class="p-6 hidden" id="change-password-form">
+                            <h2 class="text-xl font-bold text-text-primary-light dark:text-text-primary-dark mb-6">
+                                Update Your Password</h2>
+                            <p class="text-sm text-text-secondary-light dark:text-text-secondary-dark mb-6">To protect
+                                your account, please choose a strong password. It must be at least 8 characters long and
+                                include a mix of uppercase letters, lowercase letters, numbers, and symbols.</p>
+                            <form class="space-y-6">
+                                <div>
+                                    <label
+                                        class="block text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark mb-1"
+                                        for="currentPassword">Current Password</label>
+                                    <input
+                                        class="block w-full rounded-md border-border-light dark:border-border-dark shadow-sm bg-background-light dark:bg-background-dark focus:border-primary focus:ring-primary sm:text-sm"
+                                        id="currentPassword" name="currentPassword" type="password" />
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark mb-1"
+                                        for="newPassword">New Password</label>
+                                    <input
+                                        class="block w-full rounded-md border-border-light dark:border-border-dark shadow-sm bg-background-light dark:bg-background-dark focus:border-primary focus:ring-primary sm:text-sm"
+                                        id="newPassword" name="newPassword" type="password" />
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark mb-1"
+                                        for="confirmPassword">Confirm New Password</label>
+                                    <input
+                                        class="block w-full rounded-md border-border-light dark:border-border-dark shadow-sm bg-background-light dark:bg-background-dark focus:border-primary focus:ring-primary sm:text-sm"
+                                        id="confirmPassword" name="confirmPassword" type="password" />
+                                </div>
+                                <div class="flex justify-end items-center gap-4 pt-4">
+                                    <button
+                                        class="flex w-full sm:w-auto min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold hover:bg-blue-700"
+                                        type="submit">Update Password</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>NDEMLP - Allocated Subjects &amp; Classes</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                        "saffron": "#FF9933",
+                        "calm-blue": "#137fec",
+                        "text-light": "#101922",
+                        "text-dark": "#f6f7f8",
+                        "card-light": "#ffffff",
+                        "card-dark": "#192734",
+                        "border-light": "#e7edf3",
+                        "border-dark": "#2d3f50",
+                        "subtle-light": "#4c739a",
+                        "subtle-dark": "#a0b3c6",
+                        "accent-green": "#22c55e",
+                        "accent-red": "#ef4444"
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.5rem", "lg": "0.75rem", "xl": "1rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark">
+    <div class="relative flex min-h-screen w-full flex-col">
+        <div class="flex h-full grow">
+            <!-- SideNavBar -->
+            <aside
+                class="flex w-64 flex-col gap-8 border-r border-border-light dark:border-border-dark bg-card-light dark:bg-card-dark p-6">
+                <div class="flex items-center gap-3">
+                    <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12"
+                        data-alt="Teacher's profile picture"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAtxydYN6yhGx2XLv7e7tVtxUzJDdyuESLGGKad3oUwlAO_icsFbE2E7Rz5kgha9c2HTAw5zbOAY-KPRO2Eb8oP7sW-X5HhUeWIGKXjjDf2QTJnhG3dL7uaJgQQFV2iVRHbKkOxt5DkNuLuyPB2qpxFhGVq2kR2fkHK7Lcfllip8hi5fJyEuqQXFXQlxm53t1SF9__zjmfD0UONZECROA53sbHiNYF1ST9e87aLz5DysiDYqe6jEUUDUpLn85yZfK-tXB_skpnzdTaH");'>
+                    </div>
+                    <div class="flex flex-col">
+                        <h1 class="text-base font-medium leading-normal text-text-light dark:text-text-dark">Priya
+                            Sharma</h1>
+                        <p class="text-sm font-normal leading-normal text-subtle-light dark:text-subtle-dark">Teacher
+                        </p>
+                    </div>
+                </div>
+                <nav class="flex h-full flex-col justify-between">
+                    <div class="flex flex-col gap-2">
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light dark:text-text-dark hover:bg-black/5 dark:hover:bg-white/5"
+                            href="#">
+                            <span
+                                class="material-symbols-outlined text-subtle-light dark:text-subtle-dark">dashboard</span>
+                            <p class="text-sm font-medium">Dashboard</p>
+                        </a>
+                        <a class="flex items-center gap-3 rounded-lg bg-calm-blue/10 px-3 py-2 text-calm-blue" href="#">
+                            <span class="material-symbols-outlined !font-bold"
+                                style="font-variation-settings: 'FILL' 1;">auto_stories</span>
+                            <p class="text-sm font-bold">My Subjects &amp; Classes</p>
+                        </a>
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light dark:text-text-dark hover:bg-black/5 dark:hover:bg-white/5"
+                            href="#">
+                            <span
+                                class="material-symbols-outlined text-subtle-light dark:text-subtle-dark">assignment</span>
+                            <p class="text-sm font-medium">Assignments</p>
+                        </a>
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light dark:text-text-dark hover:bg-black/5 dark:hover:bg-white/5"
+                            href="#">
+                            <span
+                                class="material-symbols-outlined text-subtle-light dark:text-subtle-dark">campaign</span>
+                            <p class="text-sm font-medium">Announcements</p>
+                        </a>
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light dark:text-text-dark hover:bg-black/5 dark:hover:bg-white/5"
+                            href="#">
+                            <span class="material-symbols-outlined text-subtle-light dark:text-subtle-dark">grade</span>
+                            <p class="text-sm font-medium">Gradebook</p>
+                        </a>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light dark:text-text-dark hover:bg-black/5 dark:hover:bg-white/5"
+                            href="#">
+                            <span
+                                class="material-symbols-outlined text-subtle-light dark:text-subtle-dark">settings</span>
+                            <p class="text-sm font-medium">Settings</p>
+                        </a>
+                        <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-light dark:text-text-dark hover:bg-black/5 dark:hover:bg-white/5"
+                            href="#">
+                            <span
+                                class="material-symbols-outlined text-subtle-light dark:text-subtle-dark">logout</span>
+                            <p class="text-sm font-medium">Logout</p>
+                        </a>
+                    </div>
+                </nav>
+            </aside>
+            <!-- Main Content -->
+            <main class="flex-1 overflow-auto p-8">
+                <div class="mx-auto max-w-7xl">
+                    <!-- PageHeading -->
+                    <div class="flex flex-wrap items-center justify-between gap-4">
+                        <h1
+                            class="text-4xl font-black leading-tight tracking-[-0.033em] text-text-light dark:text-text-dark">
+                            My Subjects &amp; Classes</h1>
+                    </div>
+                    <!-- Toolbar & Search -->
+                    <div
+                        class="mt-6 flex flex-wrap items-center justify-between gap-4 border-b border-border-light dark:border-border-dark pb-4">
+                        <div class="flex-1 min-w-[280px]">
+                            <label class="flex w-full items-center">
+                                <div class="flex h-12 w-full items-stretch rounded-lg">
+                                    <span
+                                        class="material-symbols-outlined text-subtle-light dark:text-subtle-dark flex items-center justify-center rounded-l-lg border border-r-0 border-border-light dark:border-border-dark bg-card-light dark:bg-card-dark pl-4">search</span>
+                                    <input
+                                        class="form-input h-full w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-lg border border-l-0 border-border-light dark:border-border-dark bg-card-light dark:bg-card-dark text-text-light dark:text-text-dark placeholder:text-subtle-light dark:placeholder:text-subtle-dark focus:border-calm-blue focus:ring-calm-blue/50"
+                                        placeholder="Find a class or subject..." />
+                                </div>
+                            </label>
+                        </div>
+                        <div class="flex gap-2">
+                            <div
+                                class="flex items-center rounded-lg border border-border-light dark:border-border-dark bg-card-light dark:bg-card-dark p-1">
+                                <button
+                                    class="flex h-9 w-9 items-center justify-center rounded bg-calm-blue/10 text-calm-blue">
+                                    <span class="material-symbols-outlined !font-bold">grid_view</span>
+                                </button>
+                                <button
+                                    class="flex h-9 w-9 items-center justify-center rounded text-subtle-light dark:text-subtle-dark hover:bg-black/5 dark:hover:bg-white/5">
+                                    <span class="material-symbols-outlined">list</span>
+                                </button>
+                            </div>
+                            <button
+                                class="flex h-12 cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg bg-saffron px-4 text-sm font-bold text-white shadow-sm transition-colors hover:bg-saffron/90">
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">add</span>
+                                <span class="truncate">Add New Class</span>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- ImageGrid -->
+                    <div class="mt-8 grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-6">
+                        <div
+                            class="flex cursor-pointer flex-col overflow-hidden rounded-xl border border-border-light dark:border-border-dark bg-card-light dark:bg-card-dark shadow-sm transition-all hover:shadow-md hover:-translate-y-1">
+                            <div class="h-40 w-full bg-cover bg-center"
+                                data-alt="Abstract image representing Mathematics"
+                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDseXvgVv3Gxou3qg8kL4fzMMnPXezD7v5zKY9fSqFOYYd403vkqCY_ie4t9Ds-FU3oIQP2q7ThfTyHR2glTTmjWJVYOnq2NMLU4qp4TEH0Qh-ofdLnlgJng8xTogV_7lCdlUrzfBMXl-H5qXpLDWPytj0rDS9FrXo9jPgUH_HdmvTqoSgQGzXjuc62GqtMRWVjh6Rjj8ofP6K6naPfl3LCS5IsXDhqlqQGGrEymnoInA4obtsahgIcOtkygdGW4KL9p49-GIHOoCgN')">
+                            </div>
+                            <div class="flex flex-1 flex-col p-4">
+                                <div class="mb-2 flex items-start justify-between">
+                                    <div>
+                                        <p class="text-lg font-bold text-text-light dark:text-text-dark">Class 10 -
+                                            Mathematics</p>
+                                        <p class="text-sm text-subtle-light dark:text-subtle-dark">45 Students</p>
+                                    </div>
+                                    <div class="rounded-full bg-saffron/10 p-2 text-saffron">
+                                        <span class="material-symbols-outlined">calculate</span>
+                                    </div>
+                                </div>
+                                <p class="mb-4 text-sm font-medium text-accent-red">3 Pending Assignments</p>
+                                <button
+                                    class="mt-auto w-full rounded-lg bg-calm-blue py-2 text-sm font-bold text-white transition-colors hover:bg-calm-blue/90">Manage
+                                    Class</button>
+                            </div>
+                        </div>
+                        <div
+                            class="flex cursor-pointer flex-col overflow-hidden rounded-xl border border-border-light dark:border-border-dark bg-card-light dark:bg-card-dark shadow-sm transition-all hover:shadow-md hover:-translate-y-1">
+                            <div class="h-40 w-full bg-cover bg-center" data-alt="Abstract image representing Physics"
+                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDBPt_yo3uuD4SH5tMmRci1xkYdicMCQA5sTwIHg5IM78R1PpdrH-M_PW07FH9l5GSo2Qyv66MobUE7rj9NJJ2i0aaItdtTDz14UPYm3EyvdwhtUUKs6fL82oTUCVbpLzqnKqXJ0jD4KOIXiw_c66t6e_XCad5mN13yvGIXiYYgFRGLp7xARNYJLMkSP_lIYU-kTKaDRIhJ4oisvhsLJRyIobp7LugrHq7JGcglJq1SBylrNc5YqVrSBsVtuSmKdrx6LHZVOvnTbldR')">
+                            </div>
+                            <div class="flex flex-1 flex-col p-4">
+                                <div class="mb-2 flex items-start justify-between">
+                                    <div>
+                                        <p class="text-lg font-bold text-text-light dark:text-text-dark">Class 9 -
+                                            Physics</p>
+                                        <p class="text-sm text-subtle-light dark:text-subtle-dark">38 Students</p>
+                                    </div>
+                                    <div class="rounded-full bg-saffron/10 p-2 text-saffron">
+                                        <span class="material-symbols-outlined">science</span>
+                                    </div>
+                                </div>
+                                <p class="mb-4 text-sm font-medium text-accent-red">1 Pending Assignment</p>
+                                <button
+                                    class="mt-auto w-full rounded-lg bg-calm-blue py-2 text-sm font-bold text-white transition-colors hover:bg-calm-blue/90">Manage
+                                    Class</button>
+                            </div>
+                        </div>
+                        <div
+                            class="flex cursor-pointer flex-col overflow-hidden rounded-xl border border-border-light dark:border-border-dark bg-card-light dark:bg-card-dark shadow-sm transition-all hover:shadow-md hover:-translate-y-1">
+                            <div class="h-40 w-full bg-cover bg-center" data-alt="Abstract image representing Chemistry"
+                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCEp7Jj2x0RfJJLKn_0AbfHn5_VnDs0igc5JJSFlb9nMdZEZszP5fxWC0Esy2o2aqb-BW4ecX2E5bg635cKvJKqIhIFT7uoduZCtmdszxcgSo0uggbTWzYRVJJqdR545FFUUJGIVzfLOGGyCbh3Mmk9TfCVHrg6Ud8vITDQYqNM-Pb6LdDVSIdRVj6aEeSVT4D6Q5TIImeaZ_7Uyw2DTyiWWnVKRw3eWw1gw3kuO3W814j1Qb_0VU29HkYZw7LgDsm6NfrIXXu0cIqi')">
+                            </div>
+                            <div class="flex flex-1 flex-col p-4">
+                                <div class="mb-2 flex items-start justify-between">
+                                    <div>
+                                        <p class="text-lg font-bold text-text-light dark:text-text-dark">Class 10 -
+                                            Chemistry</p>
+                                        <p class="text-sm text-subtle-light dark:text-subtle-dark">42 Students</p>
+                                    </div>
+                                    <div class="rounded-full bg-saffron/10 p-2 text-saffron">
+                                        <span class="material-symbols-outlined">biotech</span>
+                                    </div>
+                                </div>
+                                <p class="mb-4 text-sm font-medium text-accent-red">5 Pending Assignments</p>
+                                <button
+                                    class="mt-auto w-full rounded-lg bg-calm-blue py-2 text-sm font-bold text-white transition-colors hover:bg-calm-blue/90">Manage
+                                    Class</button>
+                            </div>
+                        </div>
+                        <div
+                            class="flex cursor-pointer flex-col overflow-hidden rounded-xl border border-border-light dark:border-border-dark bg-card-light dark:bg-card-dark shadow-sm transition-all hover:shadow-md hover:-translate-y-1">
+                            <div class="h-40 w-full bg-cover bg-center" data-alt="Abstract image representing Science"
+                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB9ejx87h3W87s9DxBy_mzXJxhpfYD7jilJDsl6LGhfcFMUooSPHR0471hbOnkUnlCq2Qih03-PNd3f45ce3-Wwe6OoLKrJowksKJhOb3F93AzlzLBnKJmjlOLq8Dn9fva2R8DAOOtEVoxBb2mgdP93JqggtLNuQAWJLb-bF6DD85wi5Jwz22NQp8cZzdsD2gJcIjUVhKnb6tnXJ7hQAZYD6mLKAfmN3sEFUvETWUEVRT4VZEkgjfACkIhZHKQSOf1qas3HJ_Leqbjn')">
+                            </div>
+                            <div class="flex flex-1 flex-col p-4">
+                                <div class="mb-2 flex items-start justify-between">
+                                    <div>
+                                        <p class="text-lg font-bold text-text-light dark:text-text-dark">Class 8 -
+                                            Science</p>
+                                        <p class="text-sm text-subtle-light dark:text-subtle-dark">51 Students</p>
+                                    </div>
+                                    <div class="rounded-full bg-saffron/10 p-2 text-saffron">
+                                        <span class="material-symbols-outlined">emoji_objects</span>
+                                    </div>
+                                </div>
+                                <p class="mb-4 text-sm font-medium text-accent-green">All assignments graded</p>
+                                <button
+                                    class="mt-auto w-full rounded-lg bg-calm-blue py-2 text-sm font-bold text-white transition-colors hover:bg-calm-blue/90">Manage
+                                    Class</button>
+                            </div>
+                        </div>
+                        <div
+                            class="flex cursor-pointer flex-col overflow-hidden rounded-xl border border-border-light dark:border-border-dark bg-card-light dark:bg-card-dark shadow-sm transition-all hover:shadow-md hover:-translate-y-1">
+                            <div class="h-40 w-full bg-cover bg-center" data-alt="Abstract image representing Physics"
+                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAq1S5jeuEQHqKunYfxm8EQ8VAOXE6PmYZHpPHzepxOW9qDGOZspgOTRA4QPg0gJqRnDjdaqaSv5k62K-i5eZdC-5d6ZnOyvU2UPoGFfBjCWDk9oG-gsRY1A_pMpbJ_XRcC5_2c5f9iHlHmn_wP-sGV4816zC1cOkPT_wseQ_sdSMivVNsAFT0CdMyJqNxDlp622Fj22DMaMdGWvJ0Fth3ahQN142ugj2rd50bEp-q-DKf1032wUa7-d072XgmorT_NGqnv-BSfdBE4')">
+                            </div>
+                            <div class="flex flex-1 flex-col p-4">
+                                <div class="mb-2 flex items-start justify-between">
+                                    <div>
+                                        <p class="text-lg font-bold text-text-light dark:text-text-dark">Class 11 -
+                                            Physics</p>
+                                        <p class="text-sm text-subtle-light dark:text-subtle-dark">35 Students</p>
+                                    </div>
+                                    <div class="rounded-full bg-saffron/10 p-2 text-saffron">
+                                        <span class="material-symbols-outlined">science</span>
+                                    </div>
+                                </div>
+                                <p class="mb-4 text-sm font-medium text-accent-red">2 Overdue Submissions</p>
+                                <button
+                                    class="mt-auto w-full rounded-lg bg-calm-blue py-2 text-sm font-bold text-white transition-colors hover:bg-calm-blue/90">Manage
+                                    Class</button>
+                            </div>
+                        </div>
+                        <div
+                            class="flex cursor-pointer flex-col overflow-hidden rounded-xl border border-border-light dark:border-border-dark bg-card-light dark:bg-card-dark shadow-sm transition-all hover:shadow-md hover:-translate-y-1">
+                            <div class="h-40 w-full bg-cover bg-center"
+                                data-alt="Abstract image representing Mathematics"
+                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB5MjLvQhOh8OoD1jglScVxGJQ8La9Ux6eWKqOmCmlSwUP6hCi8xXd_OV-nEOovfYFDE27d03LXrkEZCO8u6jjSHwjWjGe60pldJCoGnxH3ModAe4hRfo6CCE67x2tpNOYglAGDU_6pdfhmiciBga-td7LtPAtaoYioW_qWfPVZ9vpIQvEg4_69Rqaa-uBBuCp9hMjl4fy--ZwWbekot43ALcdUPL5BFalT2LDAj8QfzBoxIRuyzhiMHRQEiuvB4jV-qGf4v8mnuNyv')">
+                            </div>
+                            <div class="flex flex-1 flex-col p-4">
+                                <div class="mb-2 flex items-start justify-between">
+                                    <div>
+                                        <p class="text-lg font-bold text-text-light dark:text-text-dark">Class 12 -
+                                            Mathematics</p>
+                                        <p class="text-sm text-subtle-light dark:text-subtle-dark">39 Students</p>
+                                    </div>
+                                    <div class="rounded-full bg-saffron/10 p-2 text-saffron">
+                                        <span class="material-symbols-outlined">calculate</span>
+                                    </div>
+                                </div>
+                                <p class="mb-4 text-sm font-medium text-subtle-light dark:text-subtle-dark">No
+                                    assignments due</p>
+                                <button
+                                    class="mt-auto w-full rounded-lg bg-calm-blue py-2 text-sm font-bold text-white transition-colors hover:bg-calm-blue/90">Manage
+                                    Class</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+
+</html>

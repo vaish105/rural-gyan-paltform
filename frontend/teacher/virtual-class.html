@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>NDEMLP Virtual Classroom</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+    </style>
+</head>
+
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-200">
+    <div class="flex h-screen w-full flex-col">
+        <!-- Top Nav Bar -->
+        <header
+            class="flex items-center justify-between whitespace-nowrap border-b border-slate-200 dark:border-slate-800 px-6 py-3 shrink-0">
+            <div class="flex items-center gap-4 text-slate-900 dark:text-white">
+                <div class="size-6 text-primary">
+                    <svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M44 11.2727C44 14.0109 39.8386 16.3957 33.69 17.6364C39.8386 18.877 44 21.2618 44 24C44 26.7382 39.8386 29.123 33.69 30.3636C39.8386 31.6043 44 33.9891 44 36.7273C44 40.7439 35.0457 44 24 44C12.9543 44 4 40.7439 4 36.7273C4 33.9891 8.16144 31.6043 14.31 30.3636C8.16144 29.123 4 26.7382 4 24C4 21.2618 8.16144 18.877 14.31 17.6364C8.16144 16.3957 4 14.0109 4 11.2727C4 7.25611 12.9543 4 24 4C35.0457 4 44 7.25611 44 11.2727Z"
+                            fill="currentColor"></path>
+                    </svg>
+                </div>
+                <h2 class="text-lg font-bold tracking-tight">Grade 10 - Mathematics</h2>
+            </div>
+            <div class="flex items-center gap-4">
+                <div
+                    class="flex items-center gap-2 rounded-lg bg-red-100 dark:bg-red-900/40 px-3 py-1.5 text-red-600 dark:text-red-400">
+                    <span class="material-symbols-outlined text-base">radio_button_checked</span>
+                    <span class="text-sm font-medium">REC</span>
+                </div>
+                <div class="flex items-center gap-2 rounded-lg bg-slate-100 dark:bg-slate-800 px-3 py-1.5">
+                    <span class="material-symbols-outlined text-base text-slate-500 dark:text-slate-400">timer</span>
+                    <span class="text-sm font-medium text-slate-800 dark:text-slate-200">00:45:12</span>
+                </div>
+                <button
+                    class="flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+                    <span class="material-symbols-outlined">help</span>
+                </button>
+                <button
+                    class="flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+                    <span class="material-symbols-outlined">settings</span>
+                </button>
+            </div>
+        </header>
+        <div class="flex flex-1 overflow-hidden">
+            <!-- Main Content Area -->
+            <main class="flex flex-1 flex-col p-4 gap-4">
+                <div class="flex-1 rounded-xl overflow-hidden bg-slate-900 relative">
+                    <!-- Main Media Player -->
+                    <div class="relative flex items-center justify-center bg-black bg-cover bg-center h-full w-full"
+                        data-alt="Teacher's video feed with a blurred background">
+                        <img class="h-full w-full object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9RQSp2J64S-yfRBf8AWwlqJvDLU2TMXJ6j0jFlwvzShIAhrJm66s3VDmtKlr_sDVO-k6WKveLMx-6c0n-fjgthdTc3LM6D9SnRnHWaobjKgQxB5vOygbbqBlrW8l-DhuC8pmrie6XSWPEQ-oV1MQq2IuW1zdfgjZMeD4ZY8MLHkeVoT-kjlcsULSrJSmO0T60M3pgm7Swe1nx04o2G7PhVaYNfKEPz4fJIMyhSlAbf8HnitSQvE0pOJRYvbU3k5jZLHHRKlbHero9" />
+                        <div class="absolute bottom-4 left-4 bg-black/50 text-white text-sm px-3 py-1.5 rounded-lg">
+                            Mrs. Anjali Sharma (Teacher)
+                        </div>
+                        <button
+                            class="flex shrink-0 items-center justify-center rounded-full size-16 bg-black/40 text-white absolute">
+                            <span class="material-symbols-outlined !text-4xl">play_arrow</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- Participant Filmstrip -->
+                <div class="grid grid-cols-[repeat(auto-fit,minmax(180px,1fr))] gap-4">
+                    <div class="relative flex flex-col gap-3 group">
+                        <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg"
+                            data-alt="Student video feed of Rohan Kumar"
+                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBajdJpE2i3eh1rS0VvOcVPlMqOyD4K7bN4yo8zSoJivnjySgiKdwWDB5jPELFok99FpweOx25ScXtb837NZm1KPH8dFR-GoIST8DH-xE5G8fOTnH1E1KcJ5UkKVRAhyVbWaWI3S0sUj1RE7KoFLZmjRpcrkovBZ0JGTR4wJs9a0tn7Ol42_TQJlFgoU48AfVnLuOXxt4NhQ4WIWtqGkPAgxBU-yuG-wFcE4YwVgGeJjy2hrP4hSL79Q5wOoOPLu3ejZCkIes69UR8C");'>
+                        </div>
+                        <div class="absolute bottom-2 left-2 text-white text-xs bg-black/50 px-2 py-1 rounded-md">Rohan
+                            Kumar</div>
+                        <div
+                            class="absolute top-2 right-2 size-6 flex items-center justify-center bg-black/50 text-white rounded-full">
+                            <span class="material-symbols-outlined !text-base">mic_off</span>
+                        </div>
+                    </div>
+                    <div class="relative flex flex-col gap-3 group">
+                        <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg"
+                            data-alt="Student video feed of Priya Singh"
+                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAYhpyN_c6V2zSc0HzUgTwsicpycULJMuY3paBpk2oJa-D7t3kvUTQxfxzk3wHYY2gbYMJhpB2c7NjyU2fuvRvfZjhx10YPgKR-ALql9EE6IVMnC3vqe98B77SwffNi5R53n2ynblhq_6BDKCUvyNazzv5mGyZjcJbtKzNwu9Jhyg4sjtZEpyZl7nVbyJ5M1uD2ZKGJ7WFyNNV_9Ognk_RuMygPk9DH0NWgcn2D8T15JUhJImQ65tBkTEvOglgkOAOHxiyeT1I08aV5");'>
+                        </div>
+                        <div class="absolute bottom-2 left-2 text-white text-xs bg-black/50 px-2 py-1 rounded-md">Priya
+                            Singh</div>
+                        <div
+                            class="absolute top-2 right-2 size-6 flex items-center justify-center bg-green-500/80 text-white rounded-full">
+                            <span class="material-symbols-outlined !text-base">mic</span>
+                        </div>
+                    </div>
+                    <div class="relative flex flex-col gap-3 group">
+                        <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg"
+                            data-alt="Student video feed of Amit Patel"
+                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD2z4bDxH5aAlhcWoKimKbgn406KyXb3ds9cgOsXKhtNPTiXwsHbKMJbzwluq0VeNQAlUwYE59l4-RfrNYikH9fazgUMCAZR_Q716hbPJq7XzTiDyc1cRP7aaYIQ6glI6y8qIsnsBTtmxWHURdHvNK3WGccXrN1nWujZR118Y190_jzKKoGGbvU6b1LNCwUddRbSObyu3FyqwLpWkQppuebCgNvP2OtziLPm-MGqnpb6Xz5V8W0Uv_wysNahhxxddGtXKIkUDZf39KX");'>
+                        </div>
+                        <div class="absolute bottom-2 left-2 text-white text-xs bg-black/50 px-2 py-1 rounded-md">Amit
+                            Patel</div>
+                        <div
+                            class="absolute top-2 right-2 size-6 flex items-center justify-center bg-black/50 text-white rounded-full">
+                            <span class="material-symbols-outlined !text-base">mic_off</span>
+                        </div>
+                    </div>
+                    <div class="relative flex flex-col gap-3 group">
+                        <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg"
+                            data-alt="Student video feed of Sunita Gupta"
+                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDsmKrCpsoVQ3JgSOYIlDesAJtxagDidT8DLZkcfdXbsXcU_FyBoYsmB0hSCmV82m4x3i0j2rWzITo0VEYnzPiPkR5cwF97XIOaujqeauk_DY1THjSep7fRMAbYkAzr94tQ6_98fQkV5l7tOGiNpF80H_dEOD0bCFsr_HUy5Dlyc4LstMfgWi-1iAJy2R4FdJQN-QgJLx-hhJ6HM-oiPryciaufQOtBb1CUKi4miv0X6MmR8dUUAbaJ8iL5DYTfu6xAJK6TTjuNePGg");'>
+                        </div>
+                        <div class="absolute bottom-2 left-2 text-white text-xs bg-black/50 px-2 py-1 rounded-md">Sunita
+                            Gupta</div>
+                        <div
+                            class="absolute top-2 right-2 size-6 flex items-center justify-center bg-black/50 text-white rounded-full">
+                            <span class="material-symbols-outlined !text-base">videocam_off</span>
+                        </div>
+                    </div>
+                    <div class="relative flex flex-col gap-3 group">
+                        <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg"
+                            data-alt="Student video feed of Vikram Rathod"
+                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD51AGO-W0eXmR2zY8Pl124CmsbZ3tfdc_xMbyYnlpb_T0w9J1vqXnZ2s0E_8qvyptwoQDmeaG5AUqMx35VDxCf_Xm3kneYlAZ4w2xjxdD15GfawPG5qRCzzJJG60wnDFdJFvJAzwOMaGF4yk2da8pfag4wf61cZiOsQ06ilcJISTnRTygldpIKB-TJRPBeF73iEaAU2zfiNaGwJ7wpi52Fpi9dlZjDy2krPCWUsDhUlG7yx_D5d_4C8Xzt8TxAMKZwKByCWDBpVtRu");'>
+                        </div>
+                        <div class="absolute bottom-2 left-2 text-white text-xs bg-black/50 px-2 py-1 rounded-md">Vikram
+                            Rathod</div>
+                        <div
+                            class="absolute top-2 right-2 size-6 flex items-center justify-center bg-black/50 text-white rounded-full">
+                            <span class="material-symbols-outlined !text-base">mic_off</span>
+                        </div>
+                    </div>
+                    <div class="relative flex flex-col gap-3 group">
+                        <div class="w-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center text-slate-500 dark:text-slate-400 aspect-video bg-cover rounded-lg"
+                            data-alt="Placeholder for more participants">
+                            +20 more
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <!-- Side Panel -->
+            <aside
+                class="w-96 bg-white dark:bg-slate-900 border-l border-slate-200 dark:border-slate-800 flex flex-col">
+                <div class="shrink-0 border-b border-slate-200 dark:border-slate-800">
+                    <div class="flex p-2">
+                        <button
+                            class="flex-1 py-2 text-sm font-semibold rounded-lg bg-primary/20 text-primary">Participants
+                            (25)</button>
+                        <button
+                            class="flex-1 py-2 text-sm font-semibold text-slate-600 dark:text-slate-300">Chat</button>
+                    </div>
+                </div>
+                <div class="flex-1 overflow-y-auto p-4 flex flex-col gap-4">
+                    <div class="flex justify-between items-center">
+                        <input
+                            class="w-full bg-background-light dark:bg-background-dark border-slate-300 dark:border-slate-700 rounded-lg text-sm focus:ring-primary focus:border-primary"
+                            placeholder="Search participants..." type="search" />
+                    </div>
+                    <button
+                        class="w-full flex items-center justify-center gap-2 py-2 px-4 rounded-lg bg-slate-100 dark:bg-slate-800 text-sm font-medium hover:bg-slate-200 dark:hover:bg-slate-700">
+                        <span class="material-symbols-outlined !text-xl">voice_over_off</span>
+                        Mute All
+                    </button>
+                    <!-- Participant List -->
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <img class="size-9 rounded-full object-cover" data-alt="Avatar of Priya Singh"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbiofJ-p4a4F4Dpi_erAL5ZNlecUaZiNq3Mmn4l-u9prqfqg_dJ5ZdFRodvZpB299ICys-K4C-e0M6vlP85hwMAHRF6WO1R2qNmsPxqeCztabL7vqx8tps_kilDDNIvwYPW-CHoW14lCwZiVtk2kNuJE_-WpLgowlZINbwB5CI7JLQHT4ZV40QN8D1Wv9c8qIbA4SIzpOCe5n1o9rMSkfhMi2a456U0qub3h3N9H6h-mLSWqXuYS0JMalInBb_bCj4sIcy-hqz9WPv" />
+                                <span class="font-medium text-sm">Priya Singh</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-slate-500 dark:text-slate-400">
+                                <button
+                                    class="p-1 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-green-500"><span
+                                        class="material-symbols-outlined !text-xl">mic</span></button>
+                                <button class="p-1 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800"><span
+                                        class="material-symbols-outlined !text-xl">videocam</span></button>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <img class="size-9 rounded-full object-cover" data-alt="Avatar of Rohan Kumar"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbu8UeRH_yAWXmqkrfKleS3I0S6jy2cRIPAAtgMbSClMbiCEYKKhW8mQY9uGBQzGfIYGuDR0emZvYyIdBvAdoiPQ0twsXglcoBzuwhw_Gf6EqweZUCT0o4ixYhZok2rQO8veaUCgAeTzfs-a4Xg-l4pAMA106R8mfHPUdw0gY61zwwoDrK3lOuiWQeZvH4ef5hc9QbSjD8xE4oclaEWJvzlyjf8CJbzjBU4KGXb54pqs5db9YuAh0C-aW1XLnPJ9XuadKzLPgl6TfQ" />
+                                <span class="font-medium text-sm">Rohan Kumar</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-slate-500 dark:text-slate-400">
+                                <button class="p-1 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800"><span
+                                        class="material-symbols-outlined !text-xl">mic_off</span></button>
+                                <button class="p-1 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800"><span
+                                        class="material-symbols-outlined !text-xl">videocam</span></button>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <img class="size-9 rounded-full object-cover" data-alt="Avatar of Sunita Gupta"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCs2XxfyKtGJ-V-HSiwt4PP-R_c8yvr_Eld4C3jFgeEWdvR1Z0N-yoEzyRpbghxBftOzJpCC0C9XFsUnw3cuSMKopBA33oQLvNSeLbiF5M5oSdZfS5RkSiqscaD4D45pqPYXqiyWXXtYplBPNTZFlR2NaE6soy5N1N9fHFC7Vrs37YBsVQxCTlPd-p-0VahuVI6TV3vAMZ44TSvQYA9msCtb0Z_WkgtMFB7ZVnjdPavSw5aj43zhRebi2A8c7497SjuYaR-4s08goe6" />
+                                <span class="font-medium text-sm">Sunita Gupta</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-slate-500 dark:text-slate-400">
+                                <button class="p-1 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800"><span
+                                        class="material-symbols-outlined !text-xl">mic_off</span></button>
+                                <button class="p-1 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800"><span
+                                        class="material-symbols-outlined !text-xl">videocam_off</span></button>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <img class="size-9 rounded-full object-cover" data-alt="Avatar of Amit Patel"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9Ruxt6J_aiqyEptxRNyHePXvJqgAhYzG3iyF0fCFYEKVmZFY_nnny1OVLnn21qrEi7RgQLwXDe1hpMbXYSKa8WnWXyi4lqv1d-bv4KjtH6ynThiiHdXeUZYZJB0gYEP6mxjGY_V5M0XCwa5Lccj3y8GObnW-e45w5InHGmHes6PKsVe4QyVrgYqv83tl5WRM5CBJksTPQcEgd5kl98idhLcKnVB6EamebtXkj-RjOgsm0LY2wZQyrR_Nu-I8o0fghsy1LncxpJiaD" />
+                                <span class="font-medium text-sm">Amit Patel</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-slate-500 dark:text-slate-400">
+                                <button class="p-1 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800"><span
+                                        class="material-symbols-outlined !text-xl">mic_off</span></button>
+                                <button class="p-1 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800"><span
+                                        class="material-symbols-outlined !text-xl">videocam</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+        <!-- Bottom Control Bar -->
+        <footer
+            class="flex items-center justify-center p-4 border-t border-slate-200 dark:border-slate-800 bg-background-light dark:bg-background-dark shrink-0">
+            <div class="flex justify-center gap-3">
+                <button
+                    class="p-3 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-slate-300 dark:hover:bg-slate-700">
+                    <span class="material-symbols-outlined">mic</span>
+                </button>
+                <button
+                    class="p-3 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-slate-300 dark:hover:bg-slate-700">
+                    <span class="material-symbols-outlined">videocam</span>
+                </button>
+                <div class="w-px bg-slate-200 dark:bg-slate-700 mx-2"></div>
+                <button
+                    class="p-3 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-slate-300 dark:hover:bg-slate-700">
+                    <span class="material-symbols-outlined">present_to_all</span>
+                </button>
+                <button
+                    class="p-3 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-slate-300 dark:hover:bg-slate-700">
+                    <span class="material-symbols-outlined">draw</span>
+                </button>
+                <button
+                    class="p-3 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-slate-300 dark:hover:bg-slate-700">
+                    <span class="material-symbols-outlined">radio_button_checked</span>
+                </button>
+                <button class="p-3 rounded-full bg-primary text-white hover:bg-primary/90">
+                    <span class="material-symbols-outlined">pan_tool_alt</span>
+                </button>
+                <div class="w-px bg-slate-200 dark:bg-slate-700 mx-2"></div>
+                <button
+                    class="p-3 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-slate-300 dark:hover:bg-slate-700">
+                    <span class="material-symbols-outlined">chat</span>
+                </button>
+                <button
+                    class="p-3 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-slate-300 dark:hover:bg-slate-700">
+                    <span class="material-symbols-outlined">group</span>
+                </button>
+                <button class="p-3 rounded-full bg-red-600 text-white hover:bg-red-700">
+                    <span class="material-symbols-outlined">call_end</span>
+                </button>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

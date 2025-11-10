@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>NDEMLP Student Dashboard</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0D47A1",
+                        "secondary": "#FF9933",
+                        "accent": "#138808",
+                        "background-light": "#F5F7FA",
+                        "background-dark": "#101922",
+                        "text-light": "#212529",
+                        "text-dark": "#F5F7FA",
+                        "text-secondary-light": "#6c757d",
+                        "text-secondary-dark": "#a0aec0",
+                        "card-light": "#FFFFFF",
+                        "card-dark": "#1A202C",
+                        "border-light": "#E2E8F0",
+                        "border-dark": "#2D3748"
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.75rem",
+                        "xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+    </style>
+</head>
+
+<body class="font-display bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark">
+    <div class="flex min-h-screen">
+        <!-- SideNavBar -->
+        <aside
+            class="w-64 flex-shrink-0 bg-card-light dark:bg-card-dark p-4 flex flex-col justify-between border-r border-border-light dark:border-border-dark">
+            <div class="flex flex-col gap-8">
+                <div class="flex items-center gap-3 px-2">
+                    <span class="material-symbols-outlined text-primary text-3xl">school</span>
+                    <h1 class="text-text-light dark:text-text-dark text-lg font-bold">NDEMLP</h1>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <div class="flex gap-3 items-center">
+                        <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12"
+                            data-alt="Student's profile picture"
+                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAOS7IDdLeVqyIwTlKLq-z9DZkw4qGkRtc_HmAgLZDACoicKW9m77aF-dBdGna7EGPJFGHfP45tl1OitR2u8Cnth8cFvShzCo0tUP8d4IhuVDyjvLNKg0lBqAkzjP07TXVNiLjEIZb-DKcQq0RTlN4VJJ5n1_xJsnPfoqZpdK-2UcCqNCdT8SNKpNgnTh3WdmffdqfjzyL8KZlCOd6XKvp4-yVuiiXcCkfw5-p_Vcl19hP46fVsxyF4shlBgXCvmacghDFNEQnROjpb");'>
+                        </div>
+                        <div class="flex flex-col">
+                            <h1 class="text-text-light dark:text-text-dark text-base font-semibold leading-normal">
+                                Aditya Sharma</h1>
+                            <p
+                                class="text-text-secondary-light dark:text-text-secondary-dark text-sm font-normal leading-normal">
+                                Class XII - Section A</p>
+                        </div>
+                    </div>
+                    <nav class="flex flex-col gap-2 mt-4">
+                        <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary dark:bg-primary/20"
+                            href="#">
+                            <span class="material-symbols-outlined">dashboard</span>
+                            <p class="text-sm font-semibold leading-normal">Dashboard</p>
+                        </a>
+                        <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-black/5 dark:hover:bg-white/5"
+                            href="#">
+                            <span class="material-symbols-outlined">import_contacts</span>
+                            <p class="text-sm font-medium leading-normal">Courses</p>
+                        </a>
+                        <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-black/5 dark:hover:bg-white/5"
+                            href="#">
+                            <span class="material-symbols-outlined">bar_chart_4_bars</span>
+                            <p class="text-sm font-medium leading-normal">Grades</p>
+                        </a>
+                        <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-black/5 dark:hover:bg-white/5"
+                            href="#">
+                            <span class="material-symbols-outlined">calendar_today</span>
+                            <p class="text-sm font-medium leading-normal">Calendar</p>
+                        </a>
+                        <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-black/5 dark:hover:bg-white/5"
+                            href="#">
+                            <span class="material-symbols-outlined">settings</span>
+                            <p class="text-sm font-medium leading-normal">Profile Settings</p>
+                        </a>
+                    </nav>
+                </div>
+            </div>
+            <div class="flex flex-col gap-2">
+                <a class="flex items-center gap-3 px-3 py-2.5 text-text-secondary-light dark:text-text-secondary-dark hover:text-text-light dark:hover:text-text-dark"
+                    href="#">
+                    <span class="material-symbols-outlined">logout</span>
+                    <p class="text-sm font-medium leading-normal">Log Out</p>
+                </a>
+            </div>
+        </aside>
+        <!-- Main Content -->
+        <main class="flex-1 p-6 lg:p-8 overflow-y-auto">
+            <div class="max-w-7xl mx-auto">
+                <!-- PageHeading -->
+                <div class="flex flex-wrap justify-between items-center gap-4 mb-6">
+                    <div class="flex flex-col gap-1">
+                        <p class="text-3xl font-bold tracking-tight text-text-light dark:text-text-dark">Welcome back,
+                            Aditya!</p>
+                        <p
+                            class="text-text-secondary-light dark:text-text-secondary-dark text-base font-normal leading-normal">
+                            Here’s a summary of your academic life today.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 sm:gap-3">
+                        <button
+                            class="flex items-center justify-center gap-2 min-w-[84px] cursor-pointer rounded-lg h-11 px-4 bg-secondary text-white text-sm font-bold leading-normal shadow-sm hover:bg-secondary/90">
+                            <span class="material-symbols-outlined">videocam</span>
+                            <span class="truncate">Join Virtual Class</span>
+                        </button>
+                        <button
+                            class="flex items-center justify-center gap-2 min-w-[84px] cursor-pointer rounded-lg h-11 px-4 bg-card-light dark:bg-card-dark text-text-light dark:text-text-dark text-sm font-bold leading-normal border border-border-light dark:border-border-dark shadow-sm hover:bg-background-light dark:hover:bg-background-dark">
+                            <span class="material-symbols-outlined">auto_stories</span>
+                            <span class="truncate">Study Materials</span>
+                        </button>
+                        <button
+                            class="flex items-center justify-center gap-2 min-w-[84px] cursor-pointer rounded-lg h-11 px-4 bg-card-light dark:bg-card-dark text-text-light dark:text-text-dark text-sm font-bold leading-normal border border-border-light dark:border-border-dark shadow-sm hover:bg-background-light dark:hover:bg-background-dark">
+                            <span class="material-symbols-outlined">smart_toy</span>
+                            <span class="truncate">Ask AI Tutor</span>
+                        </button>
+                        <button
+                            class="flex items-center justify-center gap-2 min-w-[84px] cursor-pointer rounded-lg h-11 px-4 bg-card-light dark:bg-card-dark text-text-light dark:text-text-dark text-sm font-bold leading-normal border border-border-light dark:border-border-dark shadow-sm hover:bg-background-light dark:hover:bg-background-dark">
+                            <span class="material-symbols-outlined">grid_view</span>
+                            <span class="truncate">View Timetable</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- Announcement Panel -->
+                <div
+                    class="relative flex items-center gap-4 p-4 mb-6 bg-primary/10 dark:bg-primary/20 text-primary rounded-lg border border-primary/20">
+                    <span class="material-symbols-outlined text-2xl">campaign</span>
+                    <p class="flex-1 text-sm font-medium">Mid-term examination schedule has been updated. Please check
+                        the calendar for more details.</p>
+                    <button class="absolute top-2 right-2 text-primary/60 hover:text-primary">
+                        <span class="material-symbols-outlined text-xl">close</span>
+                    </button>
+                </div>
+                <!-- Grid Layout -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <!-- Left Column / Main Content -->
+                    <div class="lg:col-span-2 flex flex-col gap-6">
+                        <!-- Upcoming Classes Card -->
+                        <div
+                            class="bg-card-light dark:bg-card-dark p-6 rounded-xl border border-border-light dark:border-border-dark">
+                            <h2 class="text-lg font-bold text-text-light dark:text-text-dark pb-4">Upcoming Classes</h2>
+                            <div class="flex flex-col gap-4">
+                                <div
+                                    class="flex items-center gap-4 p-4 rounded-lg bg-background-light dark:bg-background-dark">
+                                    <div
+                                        class="flex items-center justify-center size-12 rounded-lg bg-red-100 dark:bg-red-900/50 text-red-600 dark:text-red-300">
+                                        <span class="material-symbols-outlined">calculate</span>
+                                    </div>
+                                    <div class="flex-1">
+                                        <p class="font-semibold text-text-light dark:text-text-dark">Mathematics</p>
+                                        <p class="text-sm text-text-secondary-light dark:text-text-secondary-dark">Mr.
+                                            Gupta • 09:00 AM - 10:00 AM</p>
+                                    </div>
+                                    <button
+                                        class="flex min-w-[84px] cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-secondary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-secondary/90">
+                                        <span class="truncate">Join Now</span>
+                                    </button>
+                                </div>
+                                <div
+                                    class="flex items-center gap-4 p-4 rounded-lg bg-background-light dark:bg-background-dark">
+                                    <div
+                                        class="flex items-center justify-center size-12 rounded-lg bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-300">
+                                        <span class="material-symbols-outlined">science</span>
+                                    </div>
+                                    <div class="flex-1">
+                                        <p class="font-semibold text-text-light dark:text-text-dark">Physics</p>
+                                        <p class="text-sm text-text-secondary-light dark:text-text-secondary-dark">Mrs.
+                                            Singh • 10:15 AM - 11:15 AM</p>
+                                    </div>
+                                    <button
+                                        class="flex min-w-[84px] cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-gray-200 dark:bg-gray-700 text-gray-500 dark:text-gray-400 text-sm font-bold leading-normal tracking-[0.015em] cursor-not-allowed"
+                                        disabled="">
+                                        <span class="truncate">Upcoming</span>
+                                    </button>
+                                </div>
+                                <div
+                                    class="flex items-center gap-4 p-4 rounded-lg bg-background-light dark:bg-background-dark">
+                                    <div
+                                        class="flex items-center justify-center size-12 rounded-lg bg-green-100 dark:bg-green-900/50 text-green-600 dark:text-green-300">
+                                        <span class="material-symbols-outlined">biotech</span>
+                                    </div>
+                                    <div class="flex-1">
+                                        <p class="font-semibold text-text-light dark:text-text-dark">Biology</p>
+                                        <p class="text-sm text-text-secondary-light dark:text-text-secondary-dark">Dr.
+                                            Verma • 11:30 AM - 12:30 PM</p>
+                                    </div>
+                                    <button
+                                        class="flex min-w-[84px] cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-gray-200 dark:bg-gray-700 text-gray-500 dark:text-gray-400 text-sm font-bold leading-normal tracking-[0.015em] cursor-not-allowed"
+                                        disabled="">
+                                        <span class="truncate">Upcoming</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Pending Tasks Card -->
+                        <div
+                            class="bg-card-light dark:bg-card-dark p-6 rounded-xl border border-border-light dark:border-border-dark">
+                            <div class="flex border-b border-border-light dark:border-border-dark mb-4">
+                                <button
+                                    class="px-4 py-2 text-sm font-semibold border-b-2 border-primary text-primary">Quizzes
+                                    (2)</button>
+                                <button
+                                    class="px-4 py-2 text-sm font-semibold text-text-secondary-light dark:text-text-secondary-dark hover:text-text-light dark:hover:text-text-dark">Assignments
+                                    (1)</button>
+                            </div>
+                            <div class="flex flex-col gap-3">
+                                <div
+                                    class="flex items-center justify-between p-4 rounded-lg bg-background-light dark:bg-background-dark">
+                                    <div>
+                                        <p class="font-semibold text-text-light dark:text-text-dark">Quiz: Chemical
+                                            Reactions</p>
+                                        <p class="text-sm text-text-secondary-light dark:text-text-secondary-dark">
+                                            Chemistry • Due: 28 July 2024</p>
+                                    </div>
+                                    <button
+                                        class="flex min-w-[84px] cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal hover:bg-primary/90">
+                                        Start Quiz
+                                    </button>
+                                </div>
+                                <div
+                                    class="flex items-center justify-between p-4 rounded-lg bg-background-light dark:bg-background-dark">
+                                    <div>
+                                        <p class="font-semibold text-text-light dark:text-text-dark">Quiz: Trigonometry
+                                            Basics</p>
+                                        <p class="text-sm text-text-secondary-light dark:text-text-secondary-dark">
+                                            Mathematics • Due: 30 July 2024</p>
+                                    </div>
+                                    <button
+                                        class="flex min-w-[84px] cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal hover:bg-primary/90">
+                                        Start Quiz
+                                    </button>
+                                </div>
+                                <div
+                                    class="flex items-center justify-between p-4 rounded-lg bg-background-light dark:bg-background-dark border border-accent/50">
+                                    <div>
+                                        <p class="font-semibold text-text-light dark:text-text-dark">Essay: Industrial
+                                            Revolution</p>
+                                        <p class="text-sm text-text-secondary-light dark:text-text-secondary-dark">
+                                            History • Submitted on 25 July</p>
+                                    </div>
+                                    <div class="flex items-center gap-2 text-accent">
+                                        <span class="material-symbols-outlined">check_circle</span>
+                                        <span class="text-sm font-semibold">Submitted</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Right Column / Sidebar -->
+                    <div class="lg:col-span-1 flex flex-col gap-6">
+                        <!-- Performance Snapshot Card -->
+                        <div
+                            class="bg-card-light dark:bg-card-dark p-6 rounded-xl border border-border-light dark:border-border-dark">
+                            <h2 class="text-lg font-bold text-text-light dark:text-text-dark pb-4">Performance Snapshot
+                            </h2>
+                            <div class="flex flex-col gap-5">
+                                <div class="flex justify-around text-center">
+                                    <div>
+                                        <div class="relative size-24 flex items-center justify-center">
+                                            <svg class="size-full transform -rotate-90" viewbox="0 0 36 36">
+                                                <circle class="text-gray-200 dark:text-gray-700" cx="18" cy="18"
+                                                    fill="transparent" r="16" stroke="currentColor" stroke-width="3">
+                                                </circle>
+                                                <circle class="text-accent" cx="18" cy="18" fill="transparent" r="16"
+                                                    stroke="currentColor" stroke-dasharray="96, 100"
+                                                    stroke-linecap="round" stroke-width="3"></circle>
+                                            </svg>
+                                            <span class="absolute text-xl font-bold text-accent">96%</span>
+                                        </div>
+                                        <p class="text-sm mt-2 text-text-secondary-light dark:text-text-secondary-dark">
+                                            Attendance</p>
+                                    </div>
+                                    <div>
+                                        <div class="relative size-24 flex items-center justify-center">
+                                            <svg class="size-full transform -rotate-90" viewbox="0 0 36 36">
+                                                <circle class="text-gray-200 dark:text-gray-700" cx="18" cy="18"
+                                                    fill="transparent" r="16" stroke="currentColor" stroke-width="3">
+                                                </circle>
+                                                <circle class="text-primary" cx="18" cy="18" fill="transparent" r="16"
+                                                    stroke="currentColor" stroke-dasharray="88, 100"
+                                                    stroke-linecap="round" stroke-width="3"></circle>
+                                            </svg>
+                                            <span class="absolute text-xl font-bold text-primary">A+</span>
+                                        </div>
+                                        <p class="text-sm mt-2 text-text-secondary-light dark:text-text-secondary-dark">
+                                            Avg. Grade</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold mb-3 text-text-light dark:text-text-dark">Recent Scores
+                                    </h3>
+                                    <div class="space-y-3">
+                                        <div class="flex justify-between items-center">
+                                            <p class="text-sm text-text-secondary-light dark:text-text-secondary-dark">
+                                                Physics Unit Test</p>
+                                            <p class="text-sm font-bold text-text-light dark:text-text-dark">92/100</p>
+                                        </div>
+                                        <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5">
+                                            <div class="bg-primary h-1.5 rounded-full" style="width: 92%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="space-y-3 mt-4">
+                                        <div class="flex justify-between items-center">
+                                            <p class="text-sm text-text-secondary-light dark:text-text-secondary-dark">
+                                                English Literature Essay</p>
+                                            <p class="text-sm font-bold text-text-light dark:text-text-dark">85/100</p>
+                                        </div>
+                                        <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5">
+                                            <div class="bg-primary h-1.5 rounded-full" style="width: 85%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Daily Login Streak -->
+                        <div
+                            class="bg-card-light dark:bg-card-dark p-6 rounded-xl border border-border-light dark:border-border-dark flex items-center gap-4">
+                            <div
+                                class="flex items-center justify-center size-14 bg-secondary/10 rounded-full text-secondary">
+                                <span class="material-symbols-outlined text-4xl">local_fire_department</span>
+                            </div>
+                            <div>
+                                <p class="text-2xl font-bold">15 Day Streak!</p>
+                                <p class="text-sm text-text-secondary-light dark:text-text-secondary-dark">Keep up the
+                                    great work.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

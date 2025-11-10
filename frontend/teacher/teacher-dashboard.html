@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>NDEMLP Teacher Dashboard</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700;900&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-200">
+    <div class="flex min-h-screen">
+        <!-- SideNavBar -->
+        <aside
+            class="w-64 flex-shrink-0 bg-white dark:bg-slate-900/70 border-r border-slate-200 dark:border-slate-800 flex flex-col">
+            <div class="flex items-center gap-3 px-6 h-16 border-b border-slate-200 dark:border-slate-800">
+                <div class="size-8 text-primary">
+                    <svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                        <path clip-rule="evenodd" d="M24 4H42V17.3333V30.6667H24V44H6V30.6667V17.3333H24V4Z"
+                            fill="currentColor" fill-rule="evenodd"></path>
+                    </svg>
+                </div>
+                <h2 class="text-slate-900 dark:text-white text-lg font-bold">NDEMLP</h2>
+            </div>
+            <div class="flex h-full flex-col justify-between p-4">
+                <div class="flex flex-col gap-4">
+                    <div class="flex flex-col gap-2">
+                        <a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 text-primary dark:bg-primary/20"
+                            href="#">
+                            <span class="material-symbols-outlined">dashboard</span>
+                            <p class="text-sm font-medium leading-normal">Dashboard</p>
+                        </a>
+                        <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800"
+                            href="#">
+                            <span class="material-symbols-outlined">groups</span>
+                            <p class="text-sm font-medium leading-normal">My Classes</p>
+                        </a>
+                        <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800"
+                            href="#">
+                            <span class="material-symbols-outlined">assignment</span>
+                            <p class="text-sm font-medium leading-normal">Assignments</p>
+                        </a>
+                        <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800"
+                            href="#">
+                            <span class="material-symbols-outlined">trending_up</span>
+                            <p class="text-sm font-medium leading-normal">Student Progress</p>
+                        </a>
+                        <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800"
+                            href="#">
+                            <span class="material-symbols-outlined">folder_open</span>
+                            <p class="text-sm font-medium leading-normal">Resources</p>
+                        </a>
+                        <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800"
+                            href="#">
+                            <span class="material-symbols-outlined">calendar_month</span>
+                            <p class="text-sm font-medium leading-normal">Calendar</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3 px-3 py-2 border-t border-slate-200 dark:border-slate-800 mt-4">
+                    <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+                        data-alt="Profile picture of Dr. Anjali Sharma"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBOBG8zlShbjVzp024KAEnd_alihXSEEDqDUtxnxkxqdbdRG2wsroB3NQYk2LjRaqv21cVLBBQWlJkvVWlnhJfzUOJOLBGVC6FkLEsY-QtmdUyly3MvBQKLsPRw0rMPCpuTKq-ZlDQ8jwnEHK7zOBf4IuOEK52HvJVrcs0jkmlEcS50B7EmFy0doOI77-Gl2CSRJI1cOLsE1aNXrZjgKhmlC84ke_xOo7ATQynP7WRVxIzer2jQR3-_0Gtck7ZHzRcVY2pPG-yTsyTc");'>
+                    </div>
+                    <div class="flex flex-col">
+                        <h1 class="text-slate-900 dark:text-white text-sm font-medium leading-normal">Dr. Anjali Sharma
+                        </h1>
+                        <p class="text-slate-500 dark:text-slate-400 text-xs font-normal leading-normal">Mathematics
+                            Teacher</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col">
+            <!-- TopNavBar -->
+            <header
+                class="flex items-center justify-between h-16 px-6 bg-white dark:bg-slate-900/70 border-b border-slate-200 dark:border-slate-800 flex-shrink-0">
+                <div class="flex-1">
+                    <label class="flex flex-col w-full max-w-sm">
+                        <div class="flex w-full flex-1 items-stretch rounded-lg h-10">
+                            <div
+                                class="text-slate-500 dark:text-slate-400 flex bg-slate-100 dark:bg-slate-800 items-center justify-center pl-3 rounded-l-lg">
+                                <span class="material-symbols-outlined text-xl">search</span>
+                            </div>
+                            <input
+                                class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-lg text-slate-900 dark:text-white focus:outline-0 focus:ring-0 border-none bg-slate-100 dark:bg-slate-800 h-full placeholder:text-slate-500 dark:placeholder:text-slate-400 px-2 text-sm font-normal"
+                                placeholder="Search classes, students, resources..." value="" />
+                        </div>
+                    </label>
+                </div>
+                <div class="flex items-center gap-4">
+                    <button
+                        class="flex items-center justify-center overflow-hidden rounded-lg h-10 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 gap-2 text-sm font-medium min-w-0 px-3">
+                        <span class="material-symbols-outlined text-xl">translate</span>
+                        <span class="hidden sm:inline">English</span>
+                        <span class="material-symbols-outlined text-lg">expand_more</span>
+                    </button>
+                    <button
+                        class="flex items-center justify-center overflow-hidden rounded-lg size-10 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                        <span class="material-symbols-outlined text-xl">notifications</span>
+                    </button>
+                    <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+                        data-alt="Profile picture of Dr. Anjali Sharma"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA5-vATc3z93V30iP0uh2cquQkq-tHbSmSIuOjdG4T2QCLHMZ9ixqcsA_nu0xes0pHVDDcy5_Tjv0HkY1CWRYK2aJ7GMBcGTSxkVaakp1qAlNV31g-pDDCQqzIzpfJC4nbWKhEYSdXItxYp0ziYzivwYm0ReAwE79CCJa6EbCHev7LgLN7jsAb5Xn_eTKemvvsTYEz6PGAAwQhPNdcXtSRMXP9ioZcO9hbkJEGbNIorDVO99aEd853mR97E2ydpVCS5tjJEwiru5GxC");'>
+                    </div>
+                </div>
+            </header>
+            <!-- Page Content -->
+            <main class="flex-1 overflow-y-auto p-6 lg:p-8">
+                <div class="max-w-7xl mx-auto">
+                    <!-- PageHeading -->
+                    <div class="flex flex-wrap justify-between items-center gap-4 mb-8">
+                        <div class="flex flex-col">
+                            <h1 class="text-slate-900 dark:text-white text-3xl font-bold leading-tight tracking-tight">
+                                Welcome back, Anjali!</h1>
+                            <p class="text-slate-500 dark:text-slate-400 text-base font-normal leading-normal">Here's a
+                                summary of your activities for today.</p>
+                        </div>
+                        <div class="flex gap-2">
+                            <button
+                                class="flex items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-slate-200 dark:bg-slate-800 text-slate-900 dark:text-white text-sm font-medium gap-2">
+                                <span class="material-symbols-outlined text-lg">add</span>
+                                <span class="truncate">Create Assignment</span>
+                            </button>
+                            <button
+                                class="flex items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-wide gap-2">
+                                <span class="material-symbols-outlined text-lg">videocam</span>
+                                <span class="truncate">Start Lecture</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                        <!-- Main column -->
+                        <div class="lg:col-span-2 flex flex-col gap-6">
+                            <!-- My Classes Section -->
+                            <div>
+                                <h2
+                                    class="text-slate-900 dark:text-white text-xl font-bold leading-tight tracking-tight mb-4">
+                                    My Classes &amp; Subjects</h2>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
+                                    <div
+                                        class="flex flex-col gap-3 p-4 bg-white dark:bg-slate-900/70 rounded-xl border border-slate-200 dark:border-slate-800">
+                                        <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg"
+                                            data-alt="Abstract gradient representing Mathematics"
+                                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAdu2mP7DdBlieLJ2SDbTrG5g4lW41y0i-6Va4p8RxPgSMGmcEZQVPbkX0NROTYQe9fI0sX_qVi4wiI1qh02rRo7x-jVjFih0aLhlyeqW4VtL9-vmEKOs3LL8jWy2RKHwFKCOtXzBshxS_J3IbpybaGji9M38kjvogZUeUYNq0s2ObesntUFzIAM4cYZQafAXuCNTdduFh72Q9Hppykv1kWI7QHHY3rglPnAU1ulVHpFBVbAB2lyl0TojLD1K74p7qg56ffuQrK35C7");'>
+                                        </div>
+                                        <div>
+                                            <p
+                                                class="text-slate-900 dark:text-white text-base font-medium leading-normal">
+                                                Class 10 - Mathematics</p>
+                                            <p
+                                                class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal">
+                                                45 Students</p>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="flex flex-col gap-3 p-4 bg-white dark:bg-slate-900/70 rounded-xl border border-slate-200 dark:border-slate-800">
+                                        <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg"
+                                            data-alt="Abstract gradient representing Mathematics"
+                                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDhf0TfeuglapwaWMNS3-08XMOC2G3MDVHIFdzh9foyA8FJKhM8f0RlzAGYCyxpsK6veaIYY2MEjnSYAfY6rjS4ZrUdQQbt_pu6YoTNXfxM7fI2PRYPw8oufsAzkh0Yxp_V1F_lK4XSgQhwXheTtEa0HUXhMeX5C1MIr50WTu9FxcugR4DNiQGyKUhGoBa17m5NB6gg3WqII3kLjrsUZAHfEbydcO_myuXMPDH_KSLTjYJzW90fk1xKEl9BvsLP2d0OEzk0k-kI6cwc");'>
+                                        </div>
+                                        <div>
+                                            <p
+                                                class="text-slate-900 dark:text-white text-base font-medium leading-normal">
+                                                Class 9 - Mathematics</p>
+                                            <p
+                                                class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal">
+                                                42 Students</p>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="flex flex-col gap-3 p-4 bg-white dark:bg-slate-900/70 rounded-xl border border-slate-200 dark:border-slate-800">
+                                        <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg"
+                                            data-alt="Abstract gradient representing Science"
+                                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCH3q52PWcu3WzPiAM_2ZtSH3SHpZslI9sRKvlbBaJJmLohrzmqGkBPynLzzh7aNKp0NEiUchlyiFHZhcKGT3fWBqY4gQFr0IoAkkzbd7G1CpSKBAQ2crDExs_kA7RdQJKHehZtMbW1sZKUu16ZX8rHmXqutAhhJzlXtWqsm6LuFA9AUCC_XeQ64PUKmfDBP3F5o1RXUgQyRM_HZiiyIDoQ142xtuLhZr1uvihZT7wJfNZoe0L9j9gCLYcAfqnUJOoL-133p0lqdX9A");'>
+                                        </div>
+                                        <div>
+                                            <p
+                                                class="text-slate-900 dark:text-white text-base font-medium leading-normal">
+                                                Class 10 - Science</p>
+                                            <p
+                                                class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal">
+                                                48 Students</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Student Progress Section -->
+                            <div>
+                                <h2
+                                    class="text-slate-900 dark:text-white text-xl font-bold leading-tight tracking-tight mb-4">
+                                    Student Progress Overview</h2>
+                                <div
+                                    class="bg-white dark:bg-slate-900/70 rounded-xl border border-slate-200 dark:border-slate-800 p-6">
+                                    <div
+                                        class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
+                                        <div>
+                                            <h3 class="text-slate-900 dark:text-white text-base font-bold">Overall
+                                                Performance</h3>
+                                            <p class="text-sm text-slate-500 dark:text-slate-400">Distribution across
+                                                all classes</p>
+                                        </div>
+                                        <div class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+                                            <span>Last 30 days</span>
+                                            <span class="material-symbols-outlined text-lg">expand_more</span>
+                                        </div>
+                                    </div>
+                                    <div class="h-64 flex items-end justify-center">
+                                        <img alt="A bar chart showing student performance in different math topics: Algebra at 60%, Geometry at 85%, Trigonometry at 95%, Calculus at 75%, and Statistics at 55%."
+                                            class="w-full h-full object-contain"
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyYXdZFO0W6SoSk1M4n6FgBKiGjEvDpzYdp4_WNZt60Onn87nT-0jJb5ZolNyle0mmXVjbUjlqJ_Bfb4OVk25iuGrl3U5GuVVxQcUwYc-7mU4DoZ8CzYu2FU010oq3Qc2CDanxdwXx7MVpuECnl_lNFezm2hggixamZbGWzPQeQwiSNyv01iUfGmCEKiDBUF3wieCrKXl-F5A13JCW3I42ErLQPdqOSeyNbeFm7XM83huH9Lz88U6vwt7x7AmSOqM11Xkr4Fl4IOXK" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Right sidebar -->
+                        <div class="lg:col-span-1 flex flex-col gap-6">
+                            <!-- Upcoming Lectures Widget -->
+                            <div
+                                class="bg-white dark:bg-slate-900/70 rounded-xl border border-slate-200 dark:border-slate-800 p-6">
+                                <h3 class="text-slate-900 dark:text-white text-base font-bold mb-4">Upcoming Lectures
+                                </h3>
+                                <div class="flex flex-col gap-4">
+                                    <div class="flex items-center gap-4">
+                                        <div
+                                            class="flex flex-col items-center justify-center w-14 h-14 rounded-lg bg-primary/10 text-primary dark:bg-primary/20">
+                                            <span class="text-xs uppercase font-bold">MON</span>
+                                            <span class="text-2xl font-bold">12</span>
+                                        </div>
+                                        <div class="flex-1">
+                                            <p class="font-medium text-slate-800 dark:text-slate-200">Class 10 - Algebra
+                                            </p>
+                                            <p class="text-sm text-slate-500 dark:text-slate-400">10:00 AM - 11:00 AM
+                                            </p>
+                                        </div>
+                                        <button
+                                            class="flex items-center justify-center size-9 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                                            <span class="material-symbols-outlined text-xl">videocam</span>
+                                        </button>
+                                    </div>
+                                    <div class="flex items-center gap-4">
+                                        <div
+                                            class="flex flex-col items-center justify-center w-14 h-14 rounded-lg bg-slate-100 dark:bg-slate-800">
+                                            <span
+                                                class="text-xs uppercase font-bold text-slate-500 dark:text-slate-400">TUE</span>
+                                            <span
+                                                class="text-2xl font-bold text-slate-800 dark:text-slate-200">13</span>
+                                        </div>
+                                        <div class="flex-1">
+                                            <p class="font-medium text-slate-800 dark:text-slate-200">Class 9 - Geometry
+                                            </p>
+                                            <p class="text-sm text-slate-500 dark:text-slate-400">09:00 AM - 10:00 AM
+                                            </p>
+                                        </div>
+                                        <button
+                                            class="flex items-center justify-center size-9 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                                            <span class="material-symbols-outlined text-xl">videocam</span>
+                                        </button>
+                                    </div>
+                                    <div class="flex items-center gap-4">
+                                        <div
+                                            class="flex flex-col items-center justify-center w-14 h-14 rounded-lg bg-slate-100 dark:bg-slate-800">
+                                            <span
+                                                class="text-xs uppercase font-bold text-slate-500 dark:text-slate-400">WED</span>
+                                            <span
+                                                class="text-2xl font-bold text-slate-800 dark:text-slate-200">14</span>
+                                        </div>
+                                        <div class="flex-1">
+                                            <p class="font-medium text-slate-800 dark:text-slate-200">Class 10 - Science
+                                            </p>
+                                            <p class="text-sm text-slate-500 dark:text-slate-400">11:00 AM - 12:00 PM
+                                            </p>
+                                        </div>
+                                        <button
+                                            class="flex items-center justify-center size-9 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                                            <span class="material-symbols-outlined text-xl">videocam</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Recent Activity Feed -->
+                            <div
+                                class="bg-white dark:bg-slate-900/70 rounded-xl border border-slate-200 dark:border-slate-800 p-6">
+                                <h3 class="text-slate-900 dark:text-white text-base font-bold mb-4">Recent Activity</h3>
+                                <ul class="space-y-4">
+                                    <li class="flex items-start gap-3">
+                                        <div
+                                            class="bg-emerald-100 dark:bg-emerald-900/50 rounded-full size-8 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                            <span
+                                                class="material-symbols-outlined text-emerald-600 dark:text-emerald-400 text-lg">task_alt</span>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm text-slate-800 dark:text-slate-200">
+                                                <span class="font-semibold">Rohan Verma</span> submitted 'Algebra Test
+                                                1'.
+                                            </p>
+                                            <p class="text-xs text-slate-500 dark:text-slate-400">2 minutes ago</p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <div
+                                            class="bg-blue-100 dark:bg-blue-900/50 rounded-full size-8 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                            <span
+                                                class="material-symbols-outlined text-blue-600 dark:text-blue-400 text-lg">question_answer</span>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm text-slate-800 dark:text-slate-200">
+                                                <span class="font-semibold">Priya Singh</span> asked a question in
+                                                'Geometry'.
+                                            </p>
+                                            <p class="text-xs text-slate-500 dark:text-slate-400">15 minutes ago</p>
+                                        </div>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <div
+                                            class="bg-amber-100 dark:bg-amber-900/50 rounded-full size-8 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                            <span
+                                                class="material-symbols-outlined text-amber-600 dark:text-amber-400 text-lg">campaign</span>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm text-slate-800 dark:text-slate-200">You sent an
+                                                announcement to 'Class 10 - Science'.</p>
+                                            <p class="text-xs text-slate-500 dark:text-slate-400">1 hour ago</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+
+</html>

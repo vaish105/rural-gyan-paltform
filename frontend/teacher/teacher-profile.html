@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Teacher Profile - NDEMLP</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700;900&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#FF9933",
+                        "primary-dark": "#000080",
+                        "background-light": "#F0F2F5",
+                        "background-dark": "#101922",
+                        "text-primary": "#000080",
+                        "text-secondary": "#4c739a",
+                        "border-color": "#e0e0e0",
+                        "success": "#138808",
+                        "error": "#D32F2F"
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-text-primary dark:text-gray-200">
+    <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+        <!-- Top Navigation Bar -->
+        <header
+            class="flex items-center justify-between whitespace-nowrap border-b border-solid border-border-color dark:border-gray-700 px-6 lg:px-10 py-3 bg-white dark:bg-background-dark sticky top-0 z-50">
+            <div class="flex items-center gap-4 text-text-primary dark:text-white">
+                <div class="size-6 text-primary">
+                    <svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                        <path clip-rule="evenodd" d="M24 4H42V17.3333V30.6667H24V44H6V30.6667V17.3333H24V4Z"
+                            fill="currentColor" fill-rule="evenodd"></path>
+                    </svg>
+                </div>
+                <h2 class="text-text-primary dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">NDEMLP
+                </h2>
+            </div>
+            <div class="hidden md:flex flex-1 justify-center gap-8">
+                <div class="flex items-center gap-9">
+                    <a class="text-text-primary dark:text-gray-300 text-sm font-medium leading-normal"
+                        href="#">Dashboard</a>
+                    <a class="text-text-primary dark:text-gray-300 text-sm font-medium leading-normal" href="#">My
+                        Classes</a>
+                    <a class="text-text-primary dark:text-gray-300 text-sm font-medium leading-normal"
+                        href="#">Resources</a>
+                    <a class="text-text-primary dark:text-gray-300 text-sm font-medium leading-normal"
+                        href="#">Reports</a>
+                </div>
+            </div>
+            <div class="flex items-center gap-2">
+                <button
+                    class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-gray-200/50 dark:bg-gray-700 text-text-primary dark:text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
+                    <span class="material-symbols-outlined text-text-primary dark:text-white text-xl">translate</span>
+                </button>
+                <button
+                    class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-gray-200/50 dark:bg-gray-700 text-text-primary dark:text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
+                    <span
+                        class="material-symbols-outlined text-text-primary dark:text-white text-xl">notifications</span>
+                </button>
+                <button
+                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] ml-2">
+                    <span class="truncate">Logout</span>
+                </button>
+                <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 ml-2"
+                    data-alt="User profile picture"
+                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAXlgUK6eroi1IvnnTl71NsGDUDxd4rlmdqFStO8WIKCcCBnMYqyuW_fmNsjxWnCJ2gGuez742g8-QRgREXw7eZEJH9ZuhlbXJ076-OIpEaydxDNU9VQqvUvQrWNLDdbaGl22X17i98CT3qI5co26hh5PV1F5sa5XeqGViNoBb2qcn0gei-L2QqSIcpRv2uaJLOYrvIYkpD925hO1brQNKDXKyc9BukKbheGMJJsEjUpNJ28H-XprDsKvx16_ESYLp237sn2vMlAqdA");'>
+                </div>
+            </div>
+        </header>
+        <div class="layout-container flex h-full grow flex-row">
+            <!-- Side Navigation Bar -->
+            <aside
+                class="w-64 flex-shrink-0 bg-white dark:bg-background-dark p-4 border-r border-border-color dark:border-gray-700 hidden lg:flex flex-col justify-between">
+                <div class="flex flex-col gap-4">
+                    <div class="flex items-center gap-3">
+                        <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+                            data-alt="User profile picture in sidebar"
+                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD5tKLdn63X8u5u8XZAcnFrRrgwG4gj8WkErUFqxV9V3xodwMzCFAgETiZvd5rD93hXkTFPHgBpbbgIicGonc8ySunjeLS8d1tgc6yikgN1_eCG3uNtLh0ZPkoGcT_5czOk7LF3QnwP5kydwitlJokw6JubFrIuoREbDFfupsQRIFQCZ3a8qTNiHGidhFeh8elkfTpevie6V8niF6vrQ_wv-IqRhBm5ItFw4JG3dHL9vSVL4yD3X90OjJ-G-dhvuyGnnc6pBDSK42Do");'>
+                        </div>
+                        <div class="flex flex-col">
+                            <h1 class="text-text-primary dark:text-white text-base font-medium leading-normal">Dr.
+                                Ananya Sharma</h1>
+                            <p class="text-text-secondary text-sm font-normal leading-normal">
+                                ananya.sharma@ndemlp.gov.in</p>
+                        </div>
+                    </div>
+                    <nav class="flex flex-col gap-2 mt-4">
+                        <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-text-primary dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
+                            href="#">
+                            <span class="material-symbols-outlined text-xl">dashboard</span>
+                            <p class="text-sm font-medium leading-normal">Dashboard</p>
+                        </a>
+                        <a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/20 dark:bg-primary/30 text-text-primary dark:text-white"
+                            href="#">
+                            <span class="material-symbols-outlined text-xl">person</span>
+                            <p class="text-sm font-bold leading-normal">Profile</p>
+                        </a>
+                        <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-text-primary dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
+                            href="#">
+                            <span class="material-symbols-outlined text-xl">calendar_month</span>
+                            <p class="text-sm font-medium leading-normal">Timetable</p>
+                        </a>
+                        <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-text-primary dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
+                            href="#">
+                            <span class="material-symbols-outlined text-xl">groups</span>
+                            <p class="text-sm font-medium leading-normal">Students</p>
+                        </a>
+                        <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-text-primary dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
+                            href="#">
+                            <span class="material-symbols-outlined text-xl">settings</span>
+                            <p class="text-sm font-medium leading-normal">Settings</p>
+                        </a>
+                    </nav>
+                </div>
+            </aside>
+            <!-- Main Content Area -->
+            <main class="flex-1 p-6 lg:p-10">
+                <div class="mx-auto max-w-4xl">
+                    <!-- Page Heading -->
+                    <div class="flex flex-wrap justify-between gap-3 mb-6">
+                        <div class="flex min-w-72 flex-col gap-2">
+                            <p
+                                class="text-text-primary dark:text-white text-3xl font-black leading-tight tracking-[-0.033em]">
+                                Manage Your Profile</p>
+                            <p class="text-text-secondary dark:text-gray-400 text-base font-normal leading-normal">Keep
+                                your personal and academic information up to date.</p>
+                        </div>
+                    </div>
+                    <!-- Profile Header -->
+                    <div
+                        class="flex p-6 @container bg-white dark:bg-background-dark rounded-xl shadow-sm border border-border-color dark:border-gray-700 mb-8">
+                        <div
+                            class="flex w-full flex-col gap-4 @[520px]:flex-row @[520px]:justify-between @[520px]:items-center">
+                            <div class="flex gap-4 items-center">
+                                <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-24 w-24 flex-shrink-0"
+                                    data-alt="Profile picture of Dr. Ananya Sharma"
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDyVWIAIDaolBKRMsxQepL1EqrES-qfec1nodxglZ8j4y2w3hfSHGqHzWxefYU2El-9tTU82VGX4X3EkpZ47a_ocRhVgm8XiMAdAjeBAdNcJsRFBc7iB_uE1fqN-XZT4viV-wvfwxTy-gTN507hfj1ZZ81SV3xnaAHO1TX4jYPhTqd_U-se0NQGJjbYdmuCXcx1wBrZVWS5x_xLNJ3bkkHApc9iqRm3wusn1-14DgPvsfstO-ODPK-0k38LAlnyg6uC_N1FTAPQXv2j");'>
+                                </div>
+                                <div class="flex flex-col justify-center">
+                                    <p
+                                        class="text-text-primary dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em]">
+                                        Dr. Ananya Sharma</p>
+                                    <p
+                                        class="text-text-secondary dark:text-gray-400 text-base font-normal leading-normal">
+                                        Teacher ID: TCH-478291</p>
+                                    <p
+                                        class="text-text-secondary dark:text-gray-400 text-base font-normal leading-normal">
+                                        Delhi Public School, R.K. Puram</p>
+                                </div>
+                            </div>
+                            <button
+                                class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-gray-200/60 dark:bg-gray-700 text-text-primary dark:text-white text-sm font-bold leading-normal tracking-[0.015em] w-full max-w-[480px] @[480px]:w-auto">
+                                <span class="truncate">Upload Photo</span>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Tabs & Content -->
+                    <div
+                        class="bg-white dark:bg-background-dark rounded-xl shadow-sm border border-border-color dark:border-gray-700">
+                        <div class="pb-3">
+                            <div class="flex border-b border-border-color dark:border-gray-700 px-6 gap-8">
+                                <a class="flex flex-col items-center justify-center border-b-[3px] border-b-primary text-text-primary dark:text-white pb-[13px] pt-4"
+                                    href="#">
+                                    <p class="text-sm font-bold leading-normal tracking-[0.015em]">Personal Information
+                                    </p>
+                                </a>
+                                <a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-text-secondary dark:text-gray-400 pb-[13px] pt-4"
+                                    href="#">
+                                    <p class="text-sm font-bold leading-normal tracking-[0.015em]">Academic &amp;
+                                        Professional</p>
+                                </a>
+                                <a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-text-secondary dark:text-gray-400 pb-[13px] pt-4"
+                                    href="#">
+                                    <p class="text-sm font-bold leading-normal tracking-[0.015em]">Contact Information
+                                    </p>
+                                </a>
+                                <a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-text-secondary dark:text-gray-400 pb-[13px] pt-4"
+                                    href="#">
+                                    <p class="text-sm font-bold leading-normal tracking-[0.015em]">Security</p>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Form Content: Personal Information -->
+                        <div class="p-6">
+                            <form class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-text-primary dark:text-gray-300 mb-1"
+                                        for="first-name">First Name</label>
+                                    <input
+                                        class="block w-full rounded-lg border-border-color dark:border-gray-600 dark:bg-gray-700 dark:text-white shadow-sm focus:border-primary focus:ring-primary sm:text-sm"
+                                        id="first-name" type="text" value="Ananya" />
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-text-primary dark:text-gray-300 mb-1"
+                                        for="last-name">Last Name</label>
+                                    <input
+                                        class="block w-full rounded-lg border-border-color dark:border-gray-600 dark:bg-gray-700 dark:text-white shadow-sm focus:border-primary focus:ring-primary sm:text-sm"
+                                        id="last-name" type="text" value="Sharma" />
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-text-primary dark:text-gray-300 mb-1"
+                                        for="dob">Date of Birth</label>
+                                    <input
+                                        class="block w-full rounded-lg border-border-color dark:border-gray-600 dark:bg-gray-700 dark:text-white shadow-sm focus:border-primary focus:ring-primary sm:text-sm"
+                                        id="dob" type="date" value="1985-05-20" />
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-text-primary dark:text-gray-300 mb-1"
+                                        for="gender">Gender</label>
+                                    <select
+                                        class="block w-full rounded-lg border-border-color dark:border-gray-600 dark:bg-gray-700 dark:text-white shadow-sm focus:border-primary focus:ring-primary sm:text-sm"
+                                        id="gender">
+                                        <option>Male</option>
+                                        <option selected="">Female</option>
+                                        <option>Other</option>
+                                    </select>
+                                </div>
+                                <div class="md:col-span-2">
+                                    <label class="block text-sm font-medium text-text-primary dark:text-gray-300 mb-1"
+                                        for="spouse-name">Father's/Spouse's Name</label>
+                                    <input
+                                        class="block w-full rounded-lg border-border-color dark:border-gray-600 dark:bg-gray-700 dark:text-white shadow-sm focus:border-primary focus:ring-primary sm:text-sm"
+                                        id="spouse-name" type="text" value="Ravi Sharma" />
+                                </div>
+                            </form>
+                            <div
+                                class="mt-8 pt-6 border-t border-border-color dark:border-gray-700 flex justify-end gap-3">
+                                <button
+                                    class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-gray-200/60 dark:bg-gray-700 text-text-primary dark:text-white text-sm font-bold leading-normal tracking-[0.015em]">
+                                    <span class="truncate">Cancel</span>
+                                </button>
+                                <button
+                                    class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em]">
+                                    <span class="truncate">Save Changes</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+
+</html>

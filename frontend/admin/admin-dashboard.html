@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>NDEMLP Admin Dashboard</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700;900&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            font-size: 24px;
+        }
+    </style>
+</head>
+
+<body class="font-display bg-background-light dark:bg-background-dark">
+    <div class="relative flex min-h-screen w-full">
+        <!-- Side Navigation Bar -->
+        <aside
+            class="sticky top-0 h-screen w-64 flex-shrink-0 flex-col justify-between border-r border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-background-dark hidden lg:flex">
+            <div class="flex flex-col gap-4">
+                <div class="flex items-center gap-3 p-2">
+                    <div class="text-primary size-8">
+                        <svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                            <path clip-rule="evenodd" d="M24 4H42V17.3333V30.6667H24V44H6V30.6667V17.3333H24V4Z"
+                                fill-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <h1 class="text-xl font-bold leading-tight tracking-[-0.015em] text-slate-900 dark:text-white">
+                        NDEMLP</h1>
+                </div>
+                <nav class="flex flex-col gap-2 mt-4">
+                    <a class="flex items-center gap-3 rounded-lg bg-primary/10 px-3 py-2 text-primary" href="#">
+                        <span class="material-symbols-outlined !text-2xl">dashboard</span>
+                        <p class="text-sm font-medium leading-normal">Dashboard</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-slate-700 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
+                        href="#">
+                        <span class="material-symbols-outlined !text-2xl">school</span>
+                        <p class="text-sm font-medium leading-normal">Students</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-slate-700 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
+                        href="#">
+                        <span class="material-symbols-outlined !text-2xl">person</span>
+                        <p class="text-sm font-medium leading-normal">Teachers</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-slate-700 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
+                        href="#">
+                        <span class="material-symbols-outlined !text-2xl">class</span>
+                        <p class="text-sm font-medium leading-normal">Classes</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-slate-700 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
+                        href="#">
+                        <span class="material-symbols-outlined !text-2xl">menu_book</span>
+                        <p class="text-sm font-medium leading-normal">Subjects</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-slate-700 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
+                        href="#">
+                        <span class="material-symbols-outlined !text-2xl">assessment</span>
+                        <p class="text-sm font-medium leading-normal">Reports</p>
+                    </a>
+                    <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-slate-700 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
+                        href="#">
+                        <span class="material-symbols-outlined !text-2xl">settings</span>
+                        <p class="text-sm font-medium leading-normal">System Settings</p>
+                    </a>
+                </nav>
+            </div>
+            <div class="flex flex-col gap-2">
+                <a class="flex items-center gap-3 rounded-lg px-3 py-2 text-slate-700 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
+                    href="#">
+                    <span class="material-symbols-outlined !text-2xl">logout</span>
+                    <p class="text-sm font-medium leading-normal">Logout</p>
+                </a>
+                <div class="mt-2 flex items-center gap-3 border-t border-slate-200 pt-4 dark:border-slate-800">
+                    <div class="aspect-square size-10 rounded-full bg-cover bg-center bg-no-repeat"
+                        data-alt="Profile picture of an administrator"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB39rxWmQAnytf3ZSdY6PZl9vfokxs6mjwqvR4WTcr5DIJ9ZEm_t9ltfO5o2A3XhByJGHiDkanrFrCFZOOZwS_Lf-7Bj2Ol5EPPUEdo7QeugJ2NqiNrqbAE8MjpHotggb-mRH1zadheOBvAHtkx0N40ZVq10nnQwPpo8jgaDl-iL4AO-X9i1JzlfruACVtS7gO-i_-dvhi5wQK_psbEmB6WqCiEo92NXXq6FhzJCLDjHRjZytyJrY1RHn3QFbNuwOUU_SoFYIlHhVzK");'>
+                    </div>
+                    <div class="flex flex-col">
+                        <h1 class="text-base font-medium leading-normal text-slate-900 dark:text-white">Admin</h1>
+                        <p class="text-sm font-normal leading-normal text-slate-500 dark:text-slate-400">
+                            administrator@ndemlp.gov</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <!-- Main Content -->
+        <main class="flex-1 overflow-y-auto">
+            <!-- Top Navigation Bar -->
+            <header
+                class="sticky top-0 z-10 flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 bg-background-light/80 px-4 py-3 backdrop-blur-sm dark:border-slate-800 dark:bg-background-dark/80 sm:px-8">
+                <div class="flex items-center gap-4">
+                    <button class="text-slate-700 dark:text-slate-300 lg:hidden">
+                        <span class="material-symbols-outlined !text-2xl">menu</span>
+                    </button>
+                    <label class="hidden sm:flex flex-col min-w-40 !h-10 max-w-64">
+                        <div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+                            <div
+                                class="text-slate-500 flex border-none bg-slate-100 items-center justify-center pl-4 rounded-l-lg border-r-0 dark:bg-slate-800 dark:text-slate-400">
+                                <span class="material-symbols-outlined !text-xl">search</span>
+                            </div>
+                            <input
+                                class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg border-none bg-slate-100 text-slate-900 placeholder:text-slate-500 focus:outline-0 focus:ring-0 focus:border-none h-full px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal dark:bg-slate-800 dark:text-white dark:placeholder:text-slate-400"
+                                placeholder="Search" value="" />
+                        </div>
+                    </label>
+                </div>
+                <div class="flex flex-1 items-center justify-end gap-4">
+                    <button
+                        class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 w-10 bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300">
+                        <span class="material-symbols-outlined !text-2xl">notifications</span>
+                    </button>
+                    <div class="hidden sm:flex bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+                        data-alt="Profile picture of an administrator"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuABuUe2xmEQtjd4PVcMh8XLWGe916kj4Doj5IVnpzqsQP-ZWFWQaWa5MHKPxM_RM0YGqJ-Pb8ttflYd_3feq1yUc3E-UTQCymBukebgrOYyaVvC1H1EGYfnEXCJcRPqRA_ZygzdZgqHt6Kmv0pWK7iUE72SHulzDy-Oxt6wGcagTnrMs9WXhNHMUPh8k2Oldi4a_kP1uWBYtCUCD0kObZPUPJdNbERardSbJjpIdWa35dxWE6vnZm6WUEceFb5ODsQWkZYWOGKh-aiq");'>
+                    </div>
+                </div>
+            </header>
+            <div class="p-4 sm:p-8">
+                <!-- Page Heading -->
+                <div class="flex flex-wrap justify-between gap-3">
+                    <div class="flex min-w-72 flex-col gap-2">
+                        <p class="text-3xl font-black leading-tight tracking-[-0.033em] text-slate-900 dark:text-white">
+                            Overall Analytics</p>
+                        <p class="text-base font-normal leading-normal text-slate-600 dark:text-slate-400">Welcome back,
+                            Admin! Here is an overview of the platform's performance.</p>
+                    </div>
+                </div>
+                <!-- Chips/Filters -->
+                <div class="flex flex-wrap gap-3 py-4">
+                    <button
+                        class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white pl-4 pr-2 border border-slate-200 hover:bg-slate-50 dark:bg-slate-800 dark:border-slate-700 dark:hover:bg-slate-700">
+                        <p class="text-sm font-medium leading-normal text-slate-800 dark:text-slate-200">Date Range:
+                            Last 30 Days</p>
+                        <span
+                            class="material-symbols-outlined !text-xl text-slate-600 dark:text-slate-400">expand_more</span>
+                    </button>
+                    <button
+                        class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white pl-4 pr-2 border border-slate-200 hover:bg-slate-50 dark:bg-slate-800 dark:border-slate-700 dark:hover:bg-slate-700">
+                        <p class="text-sm font-medium leading-normal text-slate-800 dark:text-slate-200">All Regions</p>
+                        <span
+                            class="material-symbols-outlined !text-xl text-slate-600 dark:text-slate-400">expand_more</span>
+                    </button>
+                    <button
+                        class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white pl-4 pr-2 border border-slate-200 hover:bg-slate-50 dark:bg-slate-800 dark:border-slate-700 dark:hover:bg-slate-700">
+                        <p class="text-sm font-medium leading-normal text-slate-800 dark:text-slate-200">All School
+                            Types</p>
+                        <span
+                            class="material-symbols-outlined !text-xl text-slate-600 dark:text-slate-400">expand_more</span>
+                    </button>
+                </div>
+                <!-- Stats Cards -->
+                <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 mt-2">
+                    <div
+                        class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
+                        <p class="text-base font-medium leading-normal text-slate-600 dark:text-slate-400">Total
+                            Students</p>
+                        <p class="tracking-light text-3xl font-bold leading-tight text-slate-900 dark:text-white">
+                            1,250,345</p>
+                        <p class="text-base font-medium leading-normal text-green-600 dark:text-green-500">+1.2%</p>
+                    </div>
+                    <div
+                        class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
+                        <p class="text-base font-medium leading-normal text-slate-600 dark:text-slate-400">Total
+                            Teachers</p>
+                        <p class="tracking-light text-3xl font-bold leading-tight text-slate-900 dark:text-white">85,670
+                        </p>
+                        <p class="text-base font-medium leading-normal text-green-600 dark:text-green-500">+0.8%</p>
+                    </div>
+                    <div
+                        class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
+                        <p class="text-base font-medium leading-normal text-slate-600 dark:text-slate-400">Overall
+                            Attendance</p>
+                        <p class="tracking-light text-3xl font-bold leading-tight text-slate-900 dark:text-white">92.5%
+                        </p>
+                        <p class="text-base font-medium leading-normal text-red-600 dark:text-red-500">-0.2%</p>
+                    </div>
+                    <div
+                        class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
+                        <p class="text-base font-medium leading-normal text-slate-600 dark:text-slate-400">Active
+                            Classes</p>
+                        <p class="tracking-light text-3xl font-bold leading-tight text-slate-900 dark:text-white">45,210
+                        </p>
+                        <p class="text-base font-medium leading-normal text-green-600 dark:text-green-500">+2.1%</p>
+                    </div>
+                </div>
+                <!-- Charts and Data Tables -->
+                <div class="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-3">
+                    <!-- Line Graph -->
+                    <div
+                        class="lg:col-span-2 rounded-xl border border-slate-200 bg-white p-6 dark:border-slate-800 dark:bg-slate-900">
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white">Student Enrollment Trends</h3>
+                        <p class="text-sm text-slate-500 dark:text-slate-400">Growth over the last 12 months</p>
+                        <div class="mt-4 h-64 flex items-center justify-center">
+                            <img class="h-full w-full object-contain"
+                                data-alt="A line graph showing a steady upward trend in student enrollment over a 12-month period, with data points for each month."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcHtwumaU7Vj6u3yMsowMT7NYu0lc0h6MUSdU-TFtDZ776B595PUFvSJD1KbV6C6VMlPfHGsXmX1lKrPKjchaHKmGbesPFy2ltfgWkee3YRloR0o84i6q9QEhWkANmtUtvk6NWRomXblv-217TclDY571wSKV1LnkymraHbz1nq2OVvlqwxcEnNjx8gvxRxrnW2bmKXNcuwi4o8OKFiDZxYx-KPuR2EICgyE0FJLjr3EdOeoyFFMtgk0Nvqjdd6x1Vlw0q7rVPPYFT" />
+                        </div>
+                    </div>
+                    <!-- Pie Chart -->
+                    <div
+                        class="rounded-xl border border-slate-200 bg-white p-6 dark:border-slate-800 dark:bg-slate-900">
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white">Attendance Breakdown</h3>
+                        <p class="text-sm text-slate-500 dark:text-slate-400">Today's snapshot</p>
+                        <div class="mt-4 h-64 flex items-center justify-center">
+                            <img class="h-full w-full object-contain"
+                                data-alt="A donut chart illustrating the daily attendance, with a large segment for 'Present' (92.5%) and a smaller segment for 'Absent' (7.5%)."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhRwytCyZ2YFjiIKAlkDuMG81-mUbPrq0fAJbWCkrRBR72pFb19HWrlpknCb-OleAZ4M7_tPGEoRacM0oVaGyHMPg_lE0itgfXGYIzhwjV44Cknerl-14yfZgRGXz4CUusWrtEn5fZw3D19J_NO4CSfZXJiaabMENMlgrRMITrMKR_bXSqprWrLBl6MydiuXbPhmviRJUm0WTMLo6QHJge2DJeJsh_kgeHMzVV8U4YVeh4ruuOl8vZdn7o85z1oWkYuPtKVewhajzK" />
+                        </div>
+                    </div>
+                    <!-- Bar Chart -->
+                    <div
+                        class="lg:col-span-3 rounded-xl border border-slate-200 bg-white p-6 dark:border-slate-800 dark:bg-slate-900">
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white">Subject-wise Performance</h3>
+                        <p class="text-sm text-slate-500 dark:text-slate-400">Average scores across all subjects</p>
+                        <div class="mt-4 h-72 flex items-center justify-center">
+                            <img class="h-full w-full object-contain"
+                                data-alt="A vertical bar chart comparing average performance scores across different subjects, with Mathematics, Science, and English showing the highest scores."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaxoBtKLzUkWUCVCjMfkfE1vPj6ffkVNa9ebKoGMTgqY5OVeKV8_csxdwQ6r6W0TaBWW90xgxP-YbyRlzF4zNU9gy4m1EKb3HjjDJh2NsY1z9b_bhYfQn6Sdd-HEn5Uo9lt-qs7BTKFsdAp53GzFPQrPOjeoj_J6KOicJFq1itaE3LexGhuTrWAYN7z3EU0GVelSxUVDTEbPyC3PhfqE1c1QPA2jCXlvXJo9y3oeyHMdrGzljQn8VNy7dFLxr7exA-ezm5RdZBueUp" />
+                        </div>
+                    </div>
+                    <!-- Data Table -->
+                    <div
+                        class="lg:col-span-3 rounded-xl border border-slate-200 bg-white p-6 dark:border-slate-800 dark:bg-slate-900">
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white">Recent Activities</h3>
+                        <div class="mt-4 overflow-x-auto">
+                            <table class="w-full text-left text-sm">
+                                <thead
+                                    class="border-b border-slate-200 text-xs uppercase text-slate-500 dark:border-slate-700 dark:text-slate-400">
+                                    <tr>
+                                        <th class="px-4 py-3" scope="col">User</th>
+                                        <th class="px-4 py-3" scope="col">Action</th>
+                                        <th class="px-4 py-3" scope="col">Details</th>
+                                        <th class="px-4 py-3" scope="col">Timestamp</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr
+                                        class="border-b border-slate-200 hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-slate-800/50">
+                                        <td
+                                            class="whitespace-nowrap px-4 py-3 font-medium text-slate-900 dark:text-white">
+                                            Priya Sharma</td>
+                                        <td class="px-4 py-3 text-slate-600 dark:text-slate-300">New Teacher Onboarded
+                                        </td>
+                                        <td class="px-4 py-3 text-slate-600 dark:text-slate-300">ID: TCH-8921, Subject:
+                                            Physics</td>
+                                        <td class="px-4 py-3 text-slate-500 dark:text-slate-400">2 mins ago</td>
+                                    </tr>
+                                    <tr
+                                        class="border-b border-slate-200 hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-slate-800/50">
+                                        <td
+                                            class="whitespace-nowrap px-4 py-3 font-medium text-slate-900 dark:text-white">
+                                            Admin</td>
+                                        <td class="px-4 py-3 text-slate-600 dark:text-slate-300">Report Generated</td>
+                                        <td class="px-4 py-3 text-slate-600 dark:text-slate-300">Q4 Attendance Report
+                                        </td>
+                                        <td class="px-4 py-3 text-slate-500 dark:text-slate-400">15 mins ago</td>
+                                    </tr>
+                                    <tr
+                                        class="border-b border-slate-200 hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-slate-800/50">
+                                        <td
+                                            class="whitespace-nowrap px-4 py-3 font-medium text-slate-900 dark:text-white">
+                                            Arjun Verma</td>
+                                        <td class="px-4 py-3 text-slate-600 dark:text-slate-300">Class Schedule Updated
+                                        </td>
+                                        <td class="px-4 py-3 text-slate-600 dark:text-slate-300">Grade 10 - Section B
+                                        </td>
+                                        <td class="px-4 py-3 text-slate-500 dark:text-slate-400">1 hour ago</td>
+                                    </tr>
+                                    <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50">
+                                        <td
+                                            class="whitespace-nowrap px-4 py-3 font-medium text-slate-900 dark:text-white">
+                                            System</td>
+                                        <td class="px-4 py-3 text-slate-600 dark:text-slate-300">System Backup Completed
+                                        </td>
+                                        <td class="px-4 py-3 text-slate-600 dark:text-slate-300">Daily automated backup
+                                        </td>
+                                        <td class="px-4 py-3 text-slate-500 dark:text-slate-400">2 hours ago</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

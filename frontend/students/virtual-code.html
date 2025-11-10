@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>NDEMLP Virtual Class Access</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+    </style>
+</head>
+
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-200">
+    <div class="flex h-screen w-full flex-col">
+        <header
+            class="flex items-center justify-between whitespace-nowrap border-b border-slate-200 dark:border-slate-800 px-6 py-3 shrink-0">
+            <div class="flex items-center gap-4 text-slate-900 dark:text-white">
+                <div class="size-6 text-primary">
+                    <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M44 11.2727C44 14.0109 39.8386 16.3957 33.69 17.6364C39.8386 18.877 44 21.2618 44 24C44 26.7382 39.8386 29.123 33.69 30.3636C39.8386 31.6043 44 33.9891 44 36.7273C44 40.7439 35.0457 44 24 44C12.9543 44 4 40.7439 4 36.7273C4 33.9891 8.16144 31.6043 14.31 30.3636C8.16144 29.123 4 26.7382 4 24C4 21.2618 8.16144 18.877 14.31 17.6364C8.16144 16.3957 4 14.0109 4 11.2727C4 7.25611 12.9543 4 24 4C35.0457 4 44 7.25611 44 11.2727Z"
+                            fill="currentColor"></path>
+                    </svg>
+                </div>
+                <h2 class="text-lg font-bold tracking-tight">Grade 10 - Mathematics</h2>
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="flex items-center gap-2 rounded-lg bg-slate-100 dark:bg-slate-800 px-3 py-1.5">
+                    <span class="material-symbols-outlined text-base text-slate-500 dark:text-slate-400">timer</span>
+                    <span class="text-sm font-medium text-slate-800 dark:text-slate-200">00:45:12</span>
+                </div>
+                <button
+                    class="flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+                    <span class="material-symbols-outlined">help</span>
+                </button>
+                <button
+                    class="flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+                    <span class="material-symbols-outlined">settings</span>
+                </button>
+            </div>
+        </header>
+        <div class="flex flex-1 overflow-hidden">
+            <main class="flex-1 flex flex-col p-4 gap-4">
+                <div class="flex-1 rounded-xl overflow-hidden bg-slate-900 relative">
+                    <div class="relative flex items-center justify-center bg-black bg-cover bg-center h-full w-full"
+                        data-alt="Teacher's video feed with a blurred background">
+                        <img class="h-full w-full object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9RQSp2J64S-yfRBf8AWwlqJvDLU2TMXJ6j0jFlwvzShIAhrJm66s3VDmtKlr_sDVO-k6WKveLMx-6c0n-fjgthdTc3LM6D9SnRnHWaobjKgQxB5vOygbbqBlrW8l-DhuC8pmrie6XSWPEQ-oV1MQq2IuW1zdfgjZMeD4ZY8MLHkeVoT-kjlcsULSrJSmO0T60M3pgm7Swe1nx04o2G7PhVaYNfKEPz4fJIMyhSlAbf8HnitSQvE0pOJRYvbU3k5jZLHHRKlbHero9" />
+                        <div class="absolute bottom-4 left-4 bg-black/50 text-white text-sm px-3 py-1.5 rounded-lg">
+                            Mrs. Anjali Sharma (Teacher)
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-[repeat(auto-fit,minmax(180px,1fr))] gap-4">
+                    <div class="relative flex flex-col gap-3 group">
+                        <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg"
+                            data-alt="Student video feed of Rohan Kumar"
+                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBajdJpE2i3eh1rS0VvOcVPlMqOyD4K7bN4yo8zSoJivnjySgiKdwWDB5jPELFok99FpweOx25ScXtb837NZm1KPH8dFR-GoIST8DH-xE5G8fOTnH1E1KcJ5UkKVRAhyVbWaWI3S0sUj1RE7KoFLZmjRpcrkovBZ0JGTR4wJs9a0tn7Ol42_TQJlFgoU48AfVnLuOXxt4NhQ4WIWtqGkPAgxBU-yuG-wFcE4YwVgGeJjy2hrP4hSL79Q5wOoOPLu3ejZCkIes69UR8C");'>
+                        </div>
+                        <div class="absolute bottom-2 left-2 text-white text-xs bg-black/50 px-2 py-1 rounded-md">Rohan
+                            Kumar</div>
+                        <div
+                            class="absolute top-2 right-2 size-6 flex items-center justify-center bg-black/50 text-white rounded-full">
+                            <span class="material-symbols-outlined !text-base">mic_off</span>
+                        </div>
+                    </div>
+                    <div class="relative flex flex-col gap-3 group">
+                        <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg"
+                            data-alt="Student video feed of Priya Singh"
+                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAYhpyN_c6V2zSc0HzUgTwsicpycULJMuY3paBpk2oJa-D7t3kvUTQxfxzk3wHYY2gbYMJhpB2c7NjyU2fuvRvfZjhx10YPgKR-ALql9EE6IVMnC3vqe98B77SwffNi5R53n2ynblhq_6BDKCUvyNazzv5mGyZjcJbtKzNwu9Jhyg4sjtZEpyZl7nVbyJ5M1uD2ZKGJ7WFyNNV_9Ognk_RuMygPk9DH0NWgcn2D8T15JUhJImQ65tBkTEvOglgkOAOHxiyeT1I08aV5");'>
+                        </div>
+                        <div class="absolute bottom-2 left-2 text-white text-xs bg-black/50 px-2 py-1 rounded-md">Priya
+                            Singh</div>
+                        <div
+                            class="absolute top-2 right-2 size-6 flex items-center justify-center bg-green-500/80 text-white rounded-full">
+                            <span class="material-symbols-outlined !text-base">mic</span>
+                        </div>
+                    </div>
+                    <div class="relative flex flex-col gap-3 group">
+                        <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg ring-2 ring-primary ring-offset-2 ring-offset-background-light dark:ring-offset-background-dark"
+                            data-alt="Student video feed of Amit Patel (You)"
+                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD2z4bDxH5aAlhcWoKimKbgn406KyXb3ds9cgOsXKhtNPTiXwsHbKMJbzwluq0VeNQAlUwYE59l4-RfrNYikH9fazgUMCAZR_Q716hbPJq7XzTiDyc1cRP7aaYIQ6glI6y8qIsnsBTtmxWHURdHvNK3WGccXrN1nWujZR118Y190_jzKKoGGbvU6b1LNCwUddRbSObyu3FyqwLpWkQppuebCgNvP2OtziLPm-MGqnpb6Xz5V8W0Uv_wysNahhxxddGtXKIkUDZf39KX");'>
+                        </div>
+                        <div class="absolute bottom-2 left-2 text-white text-xs bg-black/50 px-2 py-1 rounded-md">Amit
+                            Patel (You)</div>
+                        <div
+                            class="absolute top-2 right-2 size-6 flex items-center justify-center bg-black/50 text-white rounded-full">
+                            <span class="material-symbols-outlined !text-base">mic_off</span>
+                        </div>
+                    </div>
+                    <div class="relative flex flex-col gap-3 group">
+                        <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg"
+                            data-alt="Student video feed of Sunita Gupta"
+                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDsmKrCpsoVQ3JgSOYIlDesAJtxagDidT8DLZkcfdXbsXcU_FyBoYsmB0hSCmV82m4x3i0j2rWzITo0VEYnzPiPkR5cwF97XIOaujqeauk_DY1THjSep7fRMAbYkAzr94tQ6_98fQkV5l7tOGiNpF80H_dEOD0bCFsr_HUy5Dlyc4LstMfgWi-1iAJy2R4FdJQN-QgJLx-hhJ6HM-oiPryciaufQOtBb1CUKi4miv0X6MmR8dUUAbaJ8iL5DYTfu6xAJK6TTjuNePGg");'>
+                        </div>
+                        <div class="absolute bottom-2 left-2 text-white text-xs bg-black/50 px-2 py-1 rounded-md">Sunita
+                            Gupta</div>
+                        <div
+                            class="absolute top-2 right-2 size-6 flex items-center justify-center bg-black/50 text-white rounded-full">
+                            <span class="material-symbols-outlined !text-base">videocam_off</span>
+                        </div>
+                    </div>
+                    <div class="relative flex flex-col gap-3 group">
+                        <div class="w-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center text-slate-500 dark:text-slate-400 aspect-video bg-cover rounded-lg"
+                            data-alt="Placeholder for more participants">
+                            +21 more
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <aside
+                class="w-96 bg-white dark:bg-slate-900 border-l border-slate-200 dark:border-slate-800 flex flex-col">
+                <div class="shrink-0 border-b border-slate-200 dark:border-slate-800">
+                    <div class="flex p-2">
+                        <button
+                            class="flex-1 py-2 text-sm font-semibold text-slate-600 dark:text-slate-300">Participants
+                            (26)</button>
+                        <button
+                            class="flex-1 py-2 text-sm font-semibold rounded-lg bg-primary/20 text-primary">Chat</button>
+                    </div>
+                </div>
+                <div class="flex-1 flex flex-col overflow-y-hidden">
+                    <div class="p-4 flex-1 space-y-4 overflow-y-auto">
+                        <div class="flex items-start gap-3">
+                            <img class="size-9 rounded-full object-cover" data-alt="Avatar of Mrs. Anjali Sharma"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9RQSp2J64S-yfRBf8AWwlqJvDLU2TMXJ6j0jFlwvzShIAhrJm66s3VDmtKlr_sDVO-k6WKveLMx-6c0n-fjgthdTc3LM6D9SnRnHWaobjKgQxB5vOygbbqBlrW8l-DhuC8pmrie6XSWPEQ-oV1MQq2IuW1zdfgjZMeD4ZY8MLHkeVoT-kjlcsULSrJSmO0T60M3pgm7Swe1nx04o2G7PhVaYNfKEPz4fJIMyhSlAbf8HnitSQvE0pOJRYvbU3k5jZLHHRKlbHero9" />
+                            <div class="flex flex-col gap-1">
+                                <div class="flex items-baseline gap-2">
+                                    <span class="font-semibold text-sm">Mrs. Anjali Sharma</span>
+                                    <span class="text-xs text-slate-500 dark:text-slate-400">10:15 AM</span>
+                                </div>
+                                <div class="bg-slate-100 dark:bg-slate-800 p-3 rounded-lg rounded-tl-none">
+                                    <p class="text-sm">Welcome everyone! Please let me know if you can hear me clearly.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <img class="size-9 rounded-full object-cover" data-alt="Avatar of Priya Singh"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbiofJ-p4a4F4Dpi_erAL5ZNlecUaZiNq3Mmn4l-u9prqfqg_dJ5ZdFRodvZpB299ICys-K4C-e0M6vlP85hwMAHRF6WO1R2qNmsPxqeCztabL7vqx8tps_kilDDNIvwYPW-CHoW14lCwZiVtk2kNuJE_-WpLgowlZINbwB5CI7JLQHT4ZV40QN8D1Wv9c8qIbA4SIzpOCe5n1o9rMSkfhMi2a456U0qub3h3N9H6h-mLSWqXuYS0JMalInBb_bCj4sIcy-hqz9WPv" />
+                            <div class="flex flex-col gap-1">
+                                <div class="flex items-baseline gap-2">
+                                    <span class="font-semibold text-sm">Priya Singh</span>
+                                    <span class="text-xs text-slate-500 dark:text-slate-400">10:16 AM</span>
+                                </div>
+                                <div class="bg-slate-100 dark:bg-slate-800 p-3 rounded-lg rounded-tl-none">
+                                    <p class="text-sm">Yes Ma'am, loud and clear.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3 justify-end">
+                            <div class="flex flex-col gap-1 items-end">
+                                <div class="flex items-baseline gap-2">
+                                    <span class="font-semibold text-sm text-primary">You</span>
+                                    <span class="text-xs text-slate-500 dark:text-slate-400">10:17 AM</span>
+                                </div>
+                                <div
+                                    class="bg-primary/10 text-slate-800 dark:text-slate-200 p-3 rounded-lg rounded-tr-none">
+                                    <p class="text-sm">Good morning, Ma'am!</p>
+                                </div>
+                            </div>
+                            <img class="size-9 rounded-full object-cover" data-alt="Avatar of Amit Patel"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9Ruxt6J_aiqyEptxRNyHePXvJqgAhYzG3iyF0fCFYEKVmZFY_nnny1OVLnn21qrEi7RgQLwXDe1hpMbXYSKa8WnWXyi4lqv1d-bv4KjtH6ynThiiHdXeUZYZJB0gYEP6mxjGY_V5M0XCwa5Lccj3y8GObnW-e45w5InHGmHes6PKsVe4QyVrgYqv83tl5WRM5CBJksTPQcEgd5kl98idhLcKnVB6EamebtXkj-RjOgsm0LY2wZQyrR_Nu-I8o0fghsy1LncxpJiaD" />
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <img class="size-9 rounded-full object-cover" data-alt="Avatar of Mrs. Anjali Sharma"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9RQSp2J64S-yfRBf8AWwlqJvDLU2TMXJ6j0jFlwvzShIAhrJm66s3VDmtKlr_sDVO-k6WKveLMx-6c0n-fjgthdTc3LM6D9SnRnHWaobjKgQxB5vOygbbqBlrW8l-DhuC8pmrie6XSWPEQ-oV1MQq2IuW1zdfgjZMeD4ZY8MLHkeVoT-kjlcsULSrJSmO0T60M3pgm7Swe1nx04o2G7PhVaYNfKEPz4fJIMyhSlAbf8HnitSQvE0pOJRYvbU3k5jZLHHRKlbHero9" />
+                            <div class="flex flex-col gap-1">
+                                <div class="flex items-baseline gap-2">
+                                    <span class="font-semibold text-sm">Mrs. Anjali Sharma</span>
+                                    <span class="text-xs text-slate-500 dark:text-slate-400">10:18 AM</span>
+                                </div>
+                                <div class="bg-slate-100 dark:bg-slate-800 p-3 rounded-lg rounded-tl-none">
+                                    <p class="text-sm">Excellent. Today we'll be covering quadratic equations. Please
+                                        open your textbooks to chapter 4.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4 border-t border-slate-200 dark:border-slate-800 mt-auto">
+                        <div class="relative">
+                            <input
+                                class="w-full bg-background-light dark:bg-background-dark border-slate-300 dark:border-slate-700 rounded-lg text-sm focus:ring-primary focus:border-primary pr-10"
+                                placeholder="Type your message..." type="text" />
+                            <button
+                                class="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 rounded-full text-primary hover:bg-primary/10">
+                                <span class="material-symbols-outlined !text-xl">send</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+        <footer
+            class="flex items-center justify-between p-4 border-t border-slate-200 dark:border-slate-800 bg-background-light dark:bg-background-dark shrink-0">
+            <div class="flex items-center gap-3">
+                <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-slate-500">group</span>
+                    <span class="text-sm font-medium">26</span>
+                </div>
+            </div>
+            <div class="flex justify-center gap-3">
+                <button
+                    class="p-3 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-slate-300 dark:hover:bg-slate-700">
+                    <span class="material-symbols-outlined">mic</span>
+                </button>
+                <button
+                    class="p-3 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-slate-300 dark:hover:bg-slate-700">
+                    <span class="material-symbols-outlined">videocam</span>
+                </button>
+                <button class="p-3 rounded-full bg-primary text-white hover:bg-primary/90">
+                    <span class="material-symbols-outlined">pan_tool_alt</span>
+                </button>
+                <div class="w-px bg-slate-200 dark:bg-slate-700 mx-2"></div>
+                <button
+                    class="p-3 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-slate-300 dark:hover:bg-slate-700">
+                    <span class="material-symbols-outlined">chat</span>
+                </button>
+                <button
+                    class="p-3 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-slate-300 dark:hover:bg-slate-700">
+                    <span class="material-symbols-outlined">group</span>
+                </button>
+            </div>
+            <button
+                class="px-6 py-2.5 rounded-lg bg-red-600 text-white font-semibold text-sm hover:bg-red-700 flex items-center gap-2">
+                <span class="material-symbols-outlined">call_end</span>
+                <span>Leave</span>
+            </button>
+        </footer>
+    </div>
+</body>
+
+</html>

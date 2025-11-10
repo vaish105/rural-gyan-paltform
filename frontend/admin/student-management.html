@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>NDEMLP - Engaging Student Dashboard</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@400&amp;family=Nunito:wght@400;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <style type="text/tailwindcss">
+        :root {
+            --primary-light: #8B5CF6;--primary-dark: #6D28D9;
+            --secondary-light: #2DD4BF;--secondary-dark: #0D9488;
+            --background-light: #F8FAFC;--background-dark: #1F2937;--card-light: #FFFFFF;
+            --card-dark: #374151;
+            --text-light: #1F2937;
+            --text-dark: #F3F4F6;
+            --gradient-start-light: #ECFDF5;--gradient-end-light: #EFF6FF;--gradient-start-dark: #1A202C;--gradient-end-dark: #2D3748;}
+        body {
+            background-image: linear-gradient(to bottom right, var(--gradient-start-light), var(--gradient-end-light));
+        }
+        .dark body {
+            background-image: linear-gradient(to bottom right, var(--gradient-start-dark), var(--gradient-end-dark));
+        }
+        .avatar-gradient {
+            background-image: linear-gradient(to top right, var(--primary-light), var(--secondary-light));
+        }
+        .dark .avatar-gradient {
+            background-image: linear-gradient(to top right, var(--primary-dark), var(--secondary-dark));
+        }
+    </style>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "var(--primary-light)",
+                        "secondary": "var(--secondary-light)",
+                        "background-light": "var(--background-light)",
+                        "background-dark": "var(--background-dark)",
+                        "card-light": "var(--card-light)",
+                        "card-dark": "var(--card-dark)",
+                        "text-light": "var(--text-light)",
+                        "text-dark": "var(--text-dark)",
+                    },
+                    fontFamily: {
+                        "display": ["Nunito", "sans-serif"], "mono": ["Chivo Mono", "monospace"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.75rem", "lg": "1rem",
+                        "xl": "1.25rem",
+                        "2xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark antialiased transition-colors duration-300">
+    <div class="flex flex-col h-screen w-full">
+        <header
+            class="flex items-center justify-between whitespace-nowrap px-6 py-4 shrink-0 bg-white dark:bg-card-dark shadow-md rounded-b-2xl mx-4 mt-4">
+            <div class="flex items-center gap-4">
+                <div class="w-10 h-10 flex items-center justify-center">
+                    <img alt="NDEMLP Logo" class="h-10 w-10 rounded-full"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrxkgYXf42LRIUdyVicgnAq3rMqm403EUWL6UQy4-r_uY7asTm12CiMPGMrjAkfVKUJ7O0Ek6QNgVKQmgj5JoNn7i_gRmW_T0gE2YwaswINqGQqtU-kMXlPJvNSiRvpzRfHXuLYxS3L2bq2DBK0WM9DFfDi7e58AE01b_ug5HB9zh4vv7-xUdt6k4q0vhmizv2JvfKh_iHVDTdd73GmIyaN8wRPHJku2vDIeowxRdXV7bXN8-GGRHNaE9IGsKfLkXtHlVMXWnhm3w4" />
+                </div>
+                <h1 class="text-text-light dark:text-text-dark text-2xl font-extrabold">Engaging Student Dashboard</h1>
+            </div>
+            <div class="flex items-center gap-4">
+                <button
+                    class="flex min-w-[84px] items-center justify-center gap-2 overflow-hidden rounded-xl h-10 px-4 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-white text-sm font-semibold hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors shadow-sm">
+                    <span class="material-symbols-outlined text-base">download</span>
+                    <span class="truncate">Export Records</span>
+                </button>
+                <button
+                    class="flex min-w-[84px] items-center justify-center gap-2 overflow-hidden rounded-xl h-10 px-4 bg-primary text-white text-sm font-semibold hover:bg-primary-dark transition-colors shadow-md">
+                    <span class="material-symbols-outlined text-base">person_add</span>
+                    <span class="truncate">Enroll New Student</span>
+                </button>
+            </div>
+        </header>
+        <main class="flex-1 overflow-auto p-6 md:p-8">
+            <div class="bg-card-light dark:bg-card-dark rounded-2xl shadow-lg p-6">
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+                    <div class="sm:col-span-2 relative">
+                        <span
+                            class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500">search</span>
+                        <input
+                            class="form-input w-full rounded-xl text-text-light dark:text-text-dark focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 focus:border-primary dark:focus:border-primary h-12 placeholder:text-gray-400 dark:placeholder:text-gray-500 pl-12 text-base font-medium shadow-sm"
+                            placeholder="Search for students by name or ID..." type="text" />
+                    </div>
+                    <div>
+                        <select
+                            class="form-select w-full rounded-xl text-text-light dark:text-text-dark focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 focus:border-primary dark:focus:border-primary h-12 placeholder:text-gray-400 dark:placeholder:text-gray-500 px-4 text-base font-medium shadow-sm">
+                            <option value="">Filter by Grade Level</option>
+                            <option value="1">Grade 1</option>
+                            <option value="2">Grade 2</option>
+                            <option value="3">Grade 3</option>
+                            <option value="4">Grade 4</option>
+                            <option value="5">Grade 5</option>
+                            <option value="6">Grade 6</option>
+                            <option value="7">Grade 7</option>
+                            <option value="8">Grade 8</option>
+                            <option value="9">Grade 9</option>
+                            <option value="10">Grade 10</option>
+                            <option value="11">Grade 11</option>
+                            <option value="12">Grade 12</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    <div
+                        class="bg-white dark:bg-gray-800 rounded-2xl p-6 flex flex-col items-center text-center shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 border border-gray-100 dark:border-gray-700">
+                        <div
+                            class="w-20 h-20 rounded-full flex items-center justify-center mb-4 avatar-gradient text-white text-3xl font-bold uppercase shadow-md flex-shrink-0">
+                            AS
+                        </div>
+                        <h3 class="text-xl font-bold text-text-light dark:text-text-dark mb-1">Arjun Sharma</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 font-medium mb-3">Grade 10</p>
+                        <p class="text-xs text-gray-500 dark:text-gray-500 font-mono mb-4">ID: 2024-1001</p>
+                        <div class="flex gap-3 mt-auto">
+                            <button aria-label="Edit Student"
+                                class="p-2 rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800/60 transition-colors shadow-sm">
+                                <span class="material-symbols-outlined text-lg">edit</span>
+                            </button>
+                            <button aria-label="View Details"
+                                class="p-2 rounded-full bg-purple-100 dark:bg-purple-900/40 text-purple-600 dark:text-purple-300 hover:bg-purple-200 dark:hover:bg-purple-800/60 transition-colors shadow-sm">
+                                <span class="material-symbols-outlined text-lg">visibility</span>
+                            </button>
+                            <button aria-label="Remove Student"
+                                class="p-2 rounded-full bg-red-100 dark:bg-red-900/40 text-red-600 dark:text-red-300 hover:bg-red-200 dark:hover:bg-red-800/60 transition-colors shadow-sm">
+                                <span class="material-symbols-outlined text-lg">delete</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-gray-800 rounded-2xl p-6 flex flex-col items-center text-center shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 border border-gray-100 dark:border-gray-700">
+                        <div
+                            class="w-20 h-20 rounded-full flex items-center justify-center mb-4 avatar-gradient text-white text-3xl font-bold uppercase shadow-md flex-shrink-0">
+                            PK
+                        </div>
+                        <h3 class="text-xl font-bold text-text-light dark:text-text-dark mb-1">Priya Kumari</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 font-medium mb-3">Grade 9</p>
+                        <p class="text-xs text-gray-500 dark:text-gray-500 font-mono mb-4">ID: 2024-0923</p>
+                        <div class="flex gap-3 mt-auto">
+                            <button aria-label="Edit Student"
+                                class="p-2 rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800/60 transition-colors shadow-sm">
+                                <span class="material-symbols-outlined text-lg">edit</span>
+                            </button>
+                            <button aria-label="View Details"
+                                class="p-2 rounded-full bg-purple-100 dark:bg-purple-900/40 text-purple-600 dark:text-purple-300 hover:bg-purple-200 dark:hover:bg-purple-800/60 transition-colors shadow-sm">
+                                <span class="material-symbols-outlined text-lg">visibility</span>
+                            </button>
+                            <button aria-label="Remove Student"
+                                class="p-2 rounded-full bg-red-100 dark:bg-red-900/40 text-red-600 dark:text-red-300 hover:bg-red-200 dark:hover:bg-red-800/60 transition-colors shadow-sm">
+                                <span class="material-symbols-outlined text-lg">delete</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-gray-800 rounded-2xl p-6 flex flex-col items-center text-center shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 border border-gray-100 dark:border-gray-700">
+                        <div
+                            class="w-20 h-20 rounded-full flex items-center justify-center mb-4 avatar-gradient text-white text-3xl font-bold uppercase shadow-md flex-shrink-0">
+                            VR
+                        </div>
+                        <h3 class="text-xl font-bold text-text-light dark:text-text-dark mb-1">Vikram Rathod</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 font-medium mb-3">Grade 12</p>
+                        <p class="text-xs text-gray-500 dark:text-gray-500 font-mono mb-4">ID: 2024-1205</p>
+                        <div class="flex gap-3 mt-auto">
+                            <button aria-label="Edit Student"
+                                class="p-2 rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800/60 transition-colors shadow-sm">
+                                <span class="material-symbols-outlined text-lg">edit</span>
+                            </button>
+                            <button aria-label="View Details"
+                                class="p-2 rounded-full bg-purple-100 dark:bg-purple-900/40 text-purple-600 dark:text-purple-300 hover:bg-purple-200 dark:hover:bg-purple-800/60 transition-colors shadow-sm">
+                                <span class="material-symbols-outlined text-lg">visibility</span>
+                            </button>
+                            <button aria-label="Remove Student"
+                                class="p-2 rounded-full bg-red-100 dark:bg-red-900/40 text-red-600 dark:text-red-300 hover:bg-red-200 dark:hover:bg-red-800/60 transition-colors shadow-sm">
+                                <span class="material-symbols-outlined text-lg">delete</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-gray-800 rounded-2xl p-6 flex flex-col items-center text-center shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 border border-gray-100 dark:border-gray-700">
+                        <div
+                            class="w-20 h-20 rounded-full flex items-center justify-center mb-4 avatar-gradient text-white text-3xl font-bold uppercase shadow-md flex-shrink-0">
+                            AM
+                        </div>
+                        <h3 class="text-xl font-bold text-text-light dark:text-text-dark mb-1">Aisha Mehra</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 font-medium mb-3">Grade 8</p>
+                        <p class="text-xs text-gray-500 dark:text-gray-500 font-mono mb-4">ID: 2024-0841</p>
+                        <div class="flex gap-3 mt-auto">
+                            <button aria-label="Edit Student"
+                                class="p-2 rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800/60 transition-colors shadow-sm">
+                                <span class="material-symbols-outlined text-lg">edit</span>
+                            </button>
+                            <button aria-label="View Details"
+                                class="p-2 rounded-full bg-purple-100 dark:bg-purple-900/40 text-purple-600 dark:text-purple-300 hover:bg-purple-200 dark:hover:bg-purple-800/60 transition-colors shadow-sm">
+                                <span class="material-symbols-outlined text-lg">visibility</span>
+                            </button>
+                            <button aria-label="Remove Student"
+                                class="p-2 rounded-full bg-red-100 dark:bg-red-900/40 text-red-600 dark:text-red-300 hover:bg-red-200 dark:hover:bg-red-800/60 transition-colors shadow-sm">
+                                <span class="material-symbols-outlined text-lg">delete</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-gray-800 rounded-2xl p-6 flex flex-col items-center text-center shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 border border-gray-100 dark:border-gray-700">
+                        <div
+                            class="w-20 h-20 rounded-full flex items-center justify-center mb-4 avatar-gradient text-white text-3xl font-bold uppercase shadow-md flex-shrink-0">
+                            RP
+                        </div>
+                        <h3 class="text-xl font-bold text-text-light dark:text-text-dark mb-1">Rohan Patel</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 font-medium mb-3">Grade 11</p>
+                        <p class="text-xs text-gray-500 dark:text-gray-500 font-mono mb-4">ID: 2024-1119</p>
+                        <div class="flex gap-3 mt-auto">
+                            <button aria-label="Edit Student"
+                                class="p-2 rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800/60 transition-colors shadow-sm">
+                                <span class="material-symbols-outlined text-lg">edit</span>
+                            </button>
+                            <button aria-label="View Details"
+                                class="p-2 rounded-full bg-purple-100 dark:bg-purple-900/40 text-purple-600 dark:text-purple-300 hover:bg-purple-200 dark:hover:bg-purple-800/60 transition-colors shadow-sm">
+                                <span class="material-symbols-outlined text-lg">visibility</span>
+                            </button>
+                            <button aria-label="Remove Student"
+                                class="p-2 rounded-full bg-red-100 dark:bg-red-900/40 text-red-600 dark:text-red-300 hover:bg-red-200 dark:hover:bg-red-800/60 transition-colors shadow-sm">
+                                <span class="material-symbols-outlined text-lg">delete</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-4 sm:p-6 mt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <span class="text-base text-gray-600 dark:text-gray-400 font-medium">Displaying <span
+                            class="font-bold text-text-light dark:text-text-dark">1</span> to <span
+                            class="font-bold text-text-light dark:text-text-dark">5</span> of <span
+                            class="font-bold text-text-light dark:text-text-dark">1,245</span> students</span>
+                    <div class="inline-flex items-center space-x-2">
+                        <button
+                            class="flex items-center justify-center px-4 h-10 text-base font-medium text-gray-500 bg-white border border-gray-300 rounded-xl hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white shadow-sm">
+                            Previous
+                        </button>
+                        <button
+                            class="flex items-center justify-center px-4 h-10 text-base font-medium text-gray-500 bg-white border border-gray-300 rounded-xl hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white shadow-sm">
+                            Next
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
