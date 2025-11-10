@@ -112,7 +112,26 @@ export const studentAPI = {
   getMaterials: () => api.get('/student/materials'),
   submitQuiz: (quizId, answers) => api.post(`/student/submit-quiz/${quizId}`, { answers }),
   getQuizzes: () => api.get('/student/quizzes'),
-  chatWithAI: (message) => api.post('/student/ai-tutor', { message }),
+  chatWithAI: (data) => {
+    if (data instanceof FormData) {
+      const config = {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      };
+      return api.post('/student/ai-tutor', data, config);
+    } else {
+      return api.post('/student/ai-tutor', { message: data });
+    }
+  },
+  transcribeAudio: (audioData) => {
+    const config = {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    };
+    return api.post('/student/transcribe-audio', audioData, config);
+  },
   runCode: (code, language) => api.post('/student/code-run', { code, language }),
 };
 
