@@ -86,12 +86,14 @@ export const adminAPI = {
   createTeacher: (data) => api.post('/admin/teachers', data),
   updateTeacher: (id, data) => api.put(`/admin/teachers/${id}`, data),
   deleteTeacher: (id) => api.delete(`/admin/teachers/${id}`),
+  toggleTeacherStatus: (id) => api.patch(`/admin/teachers/${id}/toggle-status`),
   
   // Students
   getStudents: () => api.get('/admin/students'),
   createStudent: (data) => api.post('/admin/students', data),
   updateStudent: (id, data) => api.put(`/admin/students/${id}`, data),
   deleteStudent: (id) => api.delete(`/admin/students/${id}`),
+  toggleStudentStatus: (id) => api.patch(`/admin/students/${id}/toggle-status`),
   
   // Analytics
   getAnalytics: () => api.get('/admin/analytics'),
@@ -124,6 +126,8 @@ export const studentAPI = {
       return api.post('/student/ai-tutor', { message: data });
     }
   },
+  getAIChatHistory: (limit = 50) => api.get(`/student/ai-tutor/history?limit=${limit}`),
+  clearAIChatHistory: () => api.delete('/student/ai-tutor/history'),
   transcribeAudio: (audioData) => {
     const config = {
       headers: {
