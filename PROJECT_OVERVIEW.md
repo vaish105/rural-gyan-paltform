@@ -31,7 +31,7 @@ This educational management system serves **three primary user roles**:
 - Class roster and attendance management
 
 ### 🎓 **Student** - Learning & Assessment
-- AI-powered tutoring assistance
+- AI-powered tutoring assistance  
 - Virtual classroom participation
 - Online code editor and compiler
 - Quiz taking and progress tracking
